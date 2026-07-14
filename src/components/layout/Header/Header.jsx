@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import logo from '../../../assets/images/FaviconPortfolio.png';
 import { socialLinks } from '../../../data/socialLinks.js';
 import LanguageSwitcher from '../../ui/LanguageSwitcher/LanguageSwitcher.jsx';
 import styles from './Header.module.css';
@@ -42,7 +43,8 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <a className={styles.brand} href="#hero" onClick={closeMenu}>
-          Ángel Jiménez Ragel
+          <img className={styles.logo} src={logo} alt="" />
+          <span className={styles.name}>Ángel Jiménez Ragel</span>
         </a>
 
         <div className={styles.mobileControls}>

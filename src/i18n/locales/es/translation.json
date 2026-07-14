@@ -10,7 +10,11 @@
     "downloadCv": "Descargar CV"
   },
   "hero": {
-    "name": "Ángel Jiménez Ragel"
+    "eyebrow": "Desarrollador Web Full Stack",
+    "title": "Desarrollo aplicaciones web mantenibles con Laravel y React.",
+    "description": "Me centro en la arquitectura de software, el código limpio y el análisis razonado de los problemas para crear soluciones fiables, comprensibles y fáciles de evolucionar.",
+    "viewProjects": "Ver proyectos",
+    "downloadCv": "Descargar CV"
   },
   "sections": {
     "projects": {

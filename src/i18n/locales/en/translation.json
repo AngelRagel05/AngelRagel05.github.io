@@ -10,7 +10,11 @@
     "downloadCv": "Download CV"
   },
   "hero": {
-    "name": "Ángel Jiménez Ragel"
+    "eyebrow": "Full Stack Web Developer",
+    "title": "I build maintainable web applications with Laravel and React.",
+    "description": "I focus on software architecture, clean code and thoughtful problem solving to create reliable solutions that are easy to understand and evolve.",
+    "viewProjects": "View Projects",
+    "downloadCv": "Download CV"
   },
   "sections": {
     "projects": {

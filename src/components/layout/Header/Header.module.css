@@ -20,6 +20,9 @@
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   color: var(--color-text);
   font-weight: 700;
   letter-spacing: 0;
@@ -30,6 +33,18 @@
 .brand:hover,
 .brand:focus-visible {
   color: var(--color-primary);
+}
+
+.logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 auto;
+  border-radius: calc(var(--border-radius) - 4px);
+  object-fit: contain;
+}
+
+.name {
+  display: none;
 }
 
 .mobileControls {
@@ -151,6 +166,10 @@
 }
 
 @media (min-width: 880px) {
+  .name {
+    display: inline;
+  }
+
   .mobileControls {
     display: none;
   }

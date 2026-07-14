@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { socialLinks } from '../../data/socialLinks.js';
 import styles from './Hero.module.css';
 
 function Hero() {
@@ -6,7 +7,19 @@ function Hero() {
 
   return (
     <section className={styles.section} id="hero">
-      <h1 className={styles.title}>{t('hero.name')}</h1>
+      <div className={styles.content}>
+        <p className={styles.eyebrow}>{t('hero.eyebrow')}</p>
+        <h1 className={styles.title}>{t('hero.title')}</h1>
+        <p className={styles.description}>{t('hero.description')}</p>
+        <div className={styles.actions}>
+          <a className={styles.primaryAction} href="#projects">
+            {t('hero.viewProjects')}
+          </a>
+          <a className={styles.secondaryAction} href={socialLinks.cv} download>
+            {t('hero.downloadCv')}
+          </a>
+        </div>
+      </div>
     </section>
   );
 }

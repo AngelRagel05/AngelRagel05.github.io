@@ -1,0 +1,26 @@
+.section {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: var(--space-section) clamp(1rem, 4vw, 2rem);
+}
+
+.groups {
+  display: grid;
+  gap: 1rem;
+}
+
+.group {
+  display: grid;
+  gap: 1rem;
+}
+
+.category {
+  font-size: 1.15rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

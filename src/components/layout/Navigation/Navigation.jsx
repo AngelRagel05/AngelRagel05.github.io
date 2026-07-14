@@ -1,20 +1,26 @@
+import { useTranslation } from 'react-i18next';
 import styles from './Navigation.module.css';
 
 const navigationItems = [
-  { label: 'Inicio', href: '#hero' },
-  { label: 'Sobre mi', href: '#about' },
-  { label: 'Experiencia', href: '#experience' },
-  { label: 'Proyectos', href: '#projects' },
-  { label: 'Habilidades', href: '#skills' },
-  { label: 'Contacto', href: '#contact' },
+  { labelKey: 'navigation.home', href: '#home' },
+  { labelKey: 'navigation.about', href: '#about' },
+  { labelKey: 'navigation.experience', href: '#experience' },
+  { labelKey: 'navigation.projects', href: '#projects' },
+  { labelKey: 'navigation.skills', href: '#skills' },
+  { labelKey: 'navigation.contact', href: '#contact' },
 ];
 
 function Navigation() {
+  const { t } = useTranslation();
+
   return (
-    <nav className={styles.navigation} aria-label="Navegacion principal">
+    <nav
+      className={styles.navigation}
+      aria-label={t('accessibility.mainNavigation')}
+    >
       {navigationItems.map((item) => (
         <a className={styles.link} href={item.href} key={item.href}>
-          {item.label}
+          {t(item.labelKey)}
         </a>
       ))}
     </nav>

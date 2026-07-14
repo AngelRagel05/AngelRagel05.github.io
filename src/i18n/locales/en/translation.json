@@ -1,0 +1,86 @@
+{
+  "navigation": {
+    "brand": "Portfolio",
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "workProcess": "Work Process",
+    "contact": "Contact",
+    "downloadCv": "Download CV"
+  },
+  "hero": {
+    "eyebrow": "Professional portfolio",
+    "name": "Ángel Jiménez Ragel",
+    "role": "Software Developer",
+    "specialization": "Frontend and web application development",
+    "description": "A concise introduction will be added here as the portfolio content evolves.",
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "sections": {
+    "projects": {
+      "title": "Selected work",
+      "subtitle": "Sample project content used to validate the portfolio structure."
+    },
+    "about": {
+      "title": "Professional profile",
+      "subtitle": "Placeholder text for validating the About section structure."
+    },
+    "experience": {
+      "title": "Professional experience",
+      "subtitle": "Sample experience entries used while the real content is prepared."
+    },
+    "skills": {
+      "title": "Technologies and tools",
+      "subtitle": "Initial skills structure prepared for future content."
+    },
+    "workProcess": {
+      "title": "Work Process",
+      "subtitle": "A future section for explaining how projects are approached and delivered."
+    },
+    "contact": {
+      "title": "Let's talk",
+      "subtitle": "Space reserved for adding real contact channels."
+    }
+  },
+  "language": {
+    "english": "English",
+    "spanish": "Spanish",
+    "switchToEnglish": "Switch language to English",
+    "switchToSpanish": "Switch language to Spanish"
+  },
+  "accessibility": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNavigation": "Main navigation",
+    "languageSelector": "Language selector"
+  },
+  "projectItems": {
+    "example": {
+      "title": "Sample project",
+      "description": "Short description to be replaced with real project content.",
+      "viewDetails": "View details"
+    }
+  },
+  "experienceItems": {
+    "example": {
+      "role": "Professional role",
+      "company": "Company",
+      "period": "Period",
+      "description": "Experience summary to be completed with real information."
+    }
+  },
+  "skillGroups": {
+    "frontend": "Frontend"
+  },
+  "contact": {
+    "emailCta": "Send email"
+  },
+  "footer": {
+    "status": "Professional portfolio in progress."
+  }
+}

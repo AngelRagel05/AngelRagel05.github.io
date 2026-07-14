@@ -1,13 +1,17 @@
+import { useTranslation } from 'react-i18next';
 import SectionTitle from '../../components/ui/SectionTitle/SectionTitle.jsx';
 import styles from './About.module.css';
 
 function About() {
+  const { t } = useTranslation();
+
   return (
     <section className={styles.section} id="about">
-      <SectionTitle eyebrow="Sobre mi" title="Perfil profesional" />
-      <p className={styles.text}>
-        Texto de ejemplo para validar la estructura de la seccion.
-      </p>
+      <SectionTitle
+        eyebrow={t('navigation.about')}
+        title={t('sections.about.title')}
+      />
+      <p className={styles.text}>{t('sections.about.subtitle')}</p>
     </section>
   );
 }

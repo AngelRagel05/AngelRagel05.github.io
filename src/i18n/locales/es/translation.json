@@ -1,0 +1,86 @@
+{
+  "navigation": {
+    "brand": "Portfolio",
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "skills": "Competencias",
+    "workProcess": "Cómo trabajo",
+    "contact": "Contacto",
+    "downloadCv": "Descargar CV"
+  },
+  "hero": {
+    "eyebrow": "Portfolio profesional",
+    "name": "Ángel Jiménez Ragel",
+    "role": "Desarrollador de software",
+    "specialization": "Desarrollo frontend y aplicaciones web",
+    "description": "Aquí se añadirá una presentación breve a medida que evolucione el contenido del portfolio.",
+    "viewProjects": "Ver proyectos",
+    "downloadCv": "Descargar CV",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "sections": {
+    "projects": {
+      "title": "Trabajo destacado",
+      "subtitle": "Contenido de proyecto de ejemplo para validar la estructura del portfolio."
+    },
+    "about": {
+      "title": "Perfil profesional",
+      "subtitle": "Texto provisional para validar la estructura de la sección Sobre mí."
+    },
+    "experience": {
+      "title": "Trayectoria profesional",
+      "subtitle": "Entradas de experiencia de ejemplo mientras se prepara el contenido real."
+    },
+    "skills": {
+      "title": "Tecnologías y herramientas",
+      "subtitle": "Estructura inicial de competencias preparada para contenido futuro."
+    },
+    "workProcess": {
+      "title": "Cómo trabajo",
+      "subtitle": "Una futura sección para explicar cómo se enfocan y entregan los proyectos."
+    },
+    "contact": {
+      "title": "Hablemos",
+      "subtitle": "Espacio reservado para incluir los canales de contacto reales."
+    }
+  },
+  "language": {
+    "english": "Inglés",
+    "spanish": "Español",
+    "switchToEnglish": "Cambiar idioma a inglés",
+    "switchToSpanish": "Cambiar idioma a español"
+  },
+  "accessibility": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "mainNavigation": "Navegación principal",
+    "languageSelector": "Selector de idioma"
+  },
+  "projectItems": {
+    "example": {
+      "title": "Proyecto de ejemplo",
+      "description": "Descripción breve pendiente de sustituir por contenido real.",
+      "viewDetails": "Ver detalle"
+    }
+  },
+  "experienceItems": {
+    "example": {
+      "role": "Rol profesional",
+      "company": "Empresa",
+      "period": "Periodo",
+      "description": "Resumen de experiencia pendiente de completar."
+    }
+  },
+  "skillGroups": {
+    "frontend": "Frontend"
+  },
+  "contact": {
+    "emailCta": "Enviar email"
+  },
+  "footer": {
+    "status": "Portfolio profesional en desarrollo."
+  }
+}

@@ -1,7 +1,7 @@
 export const skills = [
   {
     id: 'frontend',
-    category: 'Frontend',
+    categoryKey: 'skillGroups.frontend',
     technologies: ['HTML', 'CSS', 'JavaScript', 'React'],
   },
 ];

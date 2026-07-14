@@ -1,8 +1,8 @@
 export const projects = [
   {
     id: 'project-example',
-    title: 'Proyecto de ejemplo',
-    description: 'Descripción breve pendiente de sustituir por contenido real.',
+    titleKey: 'projectItems.example.title',
+    descriptionKey: 'projectItems.example.description',
     technologies: ['React', 'Vite'],
     url: '#',
   },

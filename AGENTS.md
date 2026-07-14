@@ -69,8 +69,11 @@ export const projects = [
 - Utilizar componentes funcionales.
 - Utilizar hooks sólo cuando exista una necesidad real.
 - Mantener componentes pequeños, legibles y con una responsabilidad clara.
-- Extraer componentes únicamente cuando mejore la reutilización, legibilidad o mantenibilidad.
-- No crear componentes genéricos prematuramente.
+- Priorizar composición frente a herencia o abstracciones complejas.
+- Favorecer componentes pequeños y composables.
+- No extraer componentes únicamente para reducir líneas de código.
+- Extraer componentes únicamente cuando representen una responsabilidad reutilizable o mejoren claramente la legibilidad o mantenibilidad.
+- No crear componentes genéricos "por si acaso".
 - Evitar prop drilling innecesario, pero no introducir Context u otras soluciones globales sin justificación.
 - No utilizar React Router mientras el portfolio sea una single-page application.
 - No instalar Redux, Zustand ni gestores de estado global sin una necesidad real.
@@ -104,6 +107,9 @@ export const projects = [
 - Mantener una estética profesional, sobria, moderna, tecnológica y accesible.
 - Evitar degradados excesivos, neones, animaciones constantes, estética gamer y efectos que reduzcan legibilidad.
 - Priorizar jerarquía visual, espacio, contraste y claridad.
+- Priorizar una arquitectura clara y mantenible antes que efectos visuales.
+- El diseño no debe dificultar la comprensión del código.
+- Las animaciones deben aportar valor y no distraer.
 
 ## 6. Internacionalización
 
@@ -145,7 +151,7 @@ export const projects = [
 
 ## 8. Responsive Design
 
-- Diseñar con enfoque mobile-first cuando sea razonable.
+- Diseñar siguiendo un enfoque mobile-first salvo que exista una razón técnica clara para utilizar otra estrategia.
 - El portfolio debe funcionar correctamente en móvil, tablet y escritorio.
 - Evitar tamaños fijos que provoquen desbordamientos.
 - No depender exclusivamente de media queries específicas para dispositivos concretos.
@@ -179,6 +185,7 @@ export const projects = [
 
 Aplicar cuando corresponda:
 
+- Clean Code
 - SOLID
 - DRY
 - KISS
@@ -189,9 +196,26 @@ Aplicar cuando corresponda:
 
 Reglas:
 
+- Priorizar siempre código limpio, legible y fácil de mantener.
+- Escribir código pensando en que otro desarrollador pueda entenderlo rápidamente.
+- Utilizar nombres descriptivos para variables, funciones y componentes.
+- Evitar funciones excesivamente largas.
+- Eliminar código muerto cuando se detecte y sea seguro hacerlo.
+- Evitar comentarios que expliquen qué hace el código cuando un mejor diseño o nombres más claros puedan hacerlo innecesario.
+- Antes de implementar una funcionalidad, analizar el problema, entender la arquitectura existente, identificar alternativas razonables, evaluar su impacto y elegir la solución más simple que mantenga calidad, claridad, mantenibilidad y escalabilidad.
+- No implementar automáticamente la primera solución posible.
+- Si existen varias alternativas razonables y la decisión afecta a la arquitectura o al mantenimiento, explicar brevemente por qué se ha elegido una de ellas.
+- Mantener consistencia con las decisiones ya tomadas en el proyecto.
+- Antes de crear nuevos patrones, comprobar si ya existe uno equivalente.
+- Evitar introducir múltiples formas de resolver el mismo problema.
 - No aplicar patrones complejos sólo por demostrar conocimiento.
 - No introducir DDD dentro del frontend si no existe una necesidad real.
 - No crear sobrearquitectura.
+- No optimizar código antes de que exista un problema real.
+- No introducir complejidad únicamente por posibles mejoras futuras de rendimiento.
+- Favorecer siempre la solución más sencilla que cumpla correctamente los requisitos.
+- No introducir abstracciones, patrones o dependencias sin una necesidad real.
+- La complejidad debe justificarse.
 - Si una solución genera deuda técnica, indicarlo.
 - Priorizar la solución más simple que mantenga calidad y claridad.
 
@@ -268,6 +292,8 @@ Durante la modificación:
 - Mantener consistencia con el código existente.
 - Hacer el cambio mínimo necesario.
 - Preservar compatibilidad con el resto del proyecto.
+- No realizar grandes refactorizaciones fuera del alcance de la tarea.
+- Si se detectan oportunidades de mejora importantes fuera del alcance, indicarlas al final en lugar de aplicarlas automáticamente.
 - No introducir código temporal sin marcarlo claramente.
 - No utilizar placeholders engañosos.
 - No inventar enlaces, datos ni contenido profesional.

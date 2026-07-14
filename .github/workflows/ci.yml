@@ -1,10 +1,12 @@
 name: CI
 
 on:
+  # Valida los cambios integrados directamente en ramas principales de trabajo.
   push:
     branches:
       - develop
       - main
+  # Valida las propuestas antes de fusionarlas en develop o main.
   pull_request:
     branches:
       - develop
@@ -16,20 +18,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Descarga el codigo del repositorio en el runner.
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
+      # Usa la version LTS estable de Node.js y cachea npm.
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: lts/*
           cache: npm
 
+      # Instala exactamente las dependencias definidas en package-lock.json.
       - name: Install dependencies
         run: npm ci
 
+      # Ejecuta las reglas de calidad configuradas con ESLint.
       - name: Lint
         run: npm run lint
 
+      # Compila el proyecto; si falla, el workflow completo falla.
       - name: Build
         run: npm run build

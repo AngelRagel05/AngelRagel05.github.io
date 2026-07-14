@@ -6,7 +6,8 @@
     "about": "About",
     "experience": "Experience",
     "techStack": "Tech Stack",
-    "contact": "Contact"
+    "contact": "Contact",
+    "downloadCv": "Download CV"
   },
   "hero": {
     "name": "Ángel Jiménez Ragel"
@@ -33,10 +34,17 @@
     "switchToSpanish": "Switch language to Spanish"
   },
   "accessibility": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
     "mainNavigation": "Main navigation",
+    "footerNavigation": "Footer navigation",
     "languageSelector": "Language selector"
   },
   "footer": {
-    "status": "Professional portfolio in progress."
+    "role": "Full Stack Web Developer",
+    "builtWith": "Built with {{react}} and {{vite}}",
+    "copyright": "© 2026 {{name}}",
+    "email": "Email",
+    "downloadCv": "Download CV"
   }
 }

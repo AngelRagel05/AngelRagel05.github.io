@@ -18,7 +18,9 @@
   },
   "sections": {
     "projects": {
-      "title": "Proyectos"
+      "title": "Proyectos seleccionados",
+      "featuredPlaceholder": "Proyecto destacado",
+      "secondaryPlaceholder": "Proyecto"
     },
     "about": {
       "title": "Sobre mí"

@@ -5,8 +5,32 @@ function Projects() {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.section} id="projects">
-      <h2 className={styles.title}>{t('sections.projects.title')}</h2>
+    <section
+      className={styles.section}
+      id="projects"
+      aria-labelledby="projects-title"
+    >
+      <div className={styles.content}>
+        <h2 className={styles.heading} id="projects-title">
+          {t('sections.projects.title')}
+        </h2>
+
+        <div className={styles.featuredProjectContainer}>
+          <p>{t('sections.projects.featuredPlaceholder')}</p>
+        </div>
+
+        <div className={styles.secondaryProjectsGrid}>
+          <div className={styles.secondaryProjectContainer}>
+            <p>{t('sections.projects.secondaryPlaceholder')}</p>
+          </div>
+          <div className={styles.secondaryProjectContainer}>
+            <p>{t('sections.projects.secondaryPlaceholder')}</p>
+          </div>
+          <div className={styles.secondaryProjectContainer}>
+            <p>{t('sections.projects.secondaryPlaceholder')}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

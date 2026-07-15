@@ -18,7 +18,9 @@
   },
   "sections": {
     "projects": {
-      "title": "Projects"
+      "title": "Selected Projects",
+      "featuredPlaceholder": "Featured Project",
+      "secondaryPlaceholder": "Project"
     },
     "about": {
       "title": "About"

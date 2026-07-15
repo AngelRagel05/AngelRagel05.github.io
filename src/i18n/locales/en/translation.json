@@ -39,6 +39,35 @@
     "switchToEnglish": "Switch language to English",
     "switchToSpanish": "Switch language to Spanish"
   },
+  "projects": {
+    "items": {
+      "mikiwi": {
+        "category": "Featured Project",
+        "title": "MiKiWi",
+        "description": "A Full Stack e-commerce application built with Laravel, React and Inertia.js, focused on product customization, maintainable architecture and relational data modeling.",
+        "problemTitle": "Problem",
+        "problem": "The project explored how to structure a customizable e-commerce platform without concentrating business logic in controllers or coupling the interface too tightly to the backend.",
+        "solutionTitle": "Solution",
+        "solution": "I designed a modular application with Laravel, React and Inertia.js, separating responsibilities across the application and organizing business concerns using Domain-Driven Design principles.",
+        "technicalDecisionsTitle": "Technical Decisions",
+        "decisions": [
+          "PostgreSQL for relational data modeling.",
+          "Laravel migrations, seeders and Eloquent ORM.",
+          "React and Inertia.js for the user interface.",
+          "Git Flow for branch management.",
+          "GitHub Actions for basic Continuous Integration.",
+          "Redsys as the selected payment gateway.",
+          "Supabase as the PostgreSQL database platform."
+        ],
+        "learningTitle": "Key Learning",
+        "learning": "This project strengthened my understanding of software architecture, relational modeling, API design and the importance of separating business logic from framework concerns.",
+        "repository": "View Repository",
+        "demo": "Live Demo",
+        "preview": "Project preview",
+        "imageAlt": "Animated preview of the MiKiWi project"
+      }
+    }
+  },
   "accessibility": {
     "openMenu": "Open menu",
     "closeMenu": "Close menu",

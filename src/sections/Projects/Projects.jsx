@@ -1,4 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { projects } from '../../data/projects.js';
+import FeaturedProject from './components/FeaturedProject/FeaturedProject.jsx';
 import styles from './Projects.module.css';
 
 function Projects() {
@@ -16,7 +18,7 @@ function Projects() {
         </h2>
 
         <div className={styles.featuredProjectContainer}>
-          <p>{t('sections.projects.featuredPlaceholder')}</p>
+          <FeaturedProject project={projects.mikiwi} />
         </div>
 
         <div className={styles.secondaryProjectsGrid}>

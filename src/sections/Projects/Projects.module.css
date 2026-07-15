@@ -15,26 +15,22 @@
   color: var(--color-text);
 }
 
-.featuredProjectContainer,
+.featuredProjectContainer {
+  width: 100%;
+}
+
 .secondaryProjectContainer {
   display: flex;
   align-items: center;
   width: 100%;
   padding: clamp(1.25rem, 4vw, 2rem);
-}
-
-.featuredProjectContainer {
-  min-height: clamp(16rem, 36vw, 24rem);
+  min-height: 10rem;
 }
 
 .secondaryProjectsGrid {
   display: grid;
   grid-template-columns: 1fr;
   gap: clamp(1rem, 3vw, 1.5rem);
-}
-
-.secondaryProjectContainer {
-  min-height: 10rem;
 }
 
 @media (min-width: 48rem) {

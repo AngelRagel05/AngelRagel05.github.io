@@ -12,7 +12,7 @@
   "hero": {
     "eyebrow": "Full Stack Web Developer",
     "title": "I build maintainable web applications with Laravel and React.",
-    "description": "I focus on software architecture, clean code and thoughtful problem solving to create reliable solutions that are easy to understand and evolve.",
+    "description": "I focus on software architecture, clean code and thoughtful problem-solving to build reliable solutions that are easy to understand, maintain and evolve.",
     "viewProjects": "View Projects",
     "downloadCv": "Download CV"
   },
@@ -44,27 +44,27 @@
       "mikiwi": {
         "category": "Featured Project",
         "title": "MiKiWi",
-        "description": "A Full Stack e-commerce application built with Laravel, React and Inertia.js, focused on product customization, maintainable architecture and relational data modeling.",
-        "problemTitle": "Problem",
-        "problem": "The project explored how to structure a customizable e-commerce platform without concentrating business logic in controllers or coupling the interface too tightly to the backend.",
+        "description": "A full-stack e-commerce application built with Laravel, React and Inertia.js, focused on product customization, maintainable architecture and relational data modelling.",
+        "problemTitle": "Challenge",
+        "problem": "The main challenge was structuring a customizable e-commerce platform without concentrating business logic in controllers or tightly coupling the user interface to the backend.",
         "solutionTitle": "Solution",
-        "solution": "I designed a modular application with Laravel, React and Inertia.js, separating responsibilities across the application and organizing business concerns using Domain-Driven Design principles.",
+        "solution": "I designed a modular application with Laravel, React and Inertia.js, separating responsibilities and organizing the core business logic around Domain-Driven Design principles.",
         "technicalDecisionsTitle": "Technical Decisions",
         "decisions": [
-          "PostgreSQL for relational data modeling.",
-          "Laravel migrations, seeders and Eloquent ORM.",
+          "PostgreSQL for relational data modelling.",
+          "Laravel migrations, seeders and Eloquent ORM for database management.",
           "React and Inertia.js for the user interface.",
-          "Git Flow for branch management.",
-          "GitHub Actions for basic Continuous Integration.",
+          "Git Flow for structured branch management.",
+          "A Continuous Integration workflow with GitHub Actions.",
           "Redsys as the selected payment gateway.",
-          "Supabase as the PostgreSQL database platform."
+          "Supabase as the managed PostgreSQL platform."
         ],
-        "learningTitle": "Key Learning",
-        "learning": "This project strengthened my understanding of software architecture, relational modeling, API design and the importance of separating business logic from framework concerns.",
+        "learningTitle": "Key Takeaway",
+        "learning": "This project deepened my understanding of software architecture, relational data modelling, API design and the importance of keeping business logic independent from framework-specific concerns.",
         "repository": "View Repository",
         "demo": "Live Demo",
         "preview": "Project preview",
-        "imageAlt": "Animated preview of the MiKiWi project"
+        "imageAlt": "Animated preview of the MiKiWi e-commerce application"
       }
     }
   },

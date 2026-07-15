@@ -1,4 +1,4 @@
-import mikiwiDemo from '../assets/video/DemoMikiwi.gif';
+import mikiwiDemo from '../assets/gif/DemoMikiwi.gif';
 
 export const projects = {
   mikiwi: {

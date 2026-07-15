@@ -1,6 +1,7 @@
 .project {
-  display: grid;
-  gap: clamp(1.5rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
   width: 100%;
   padding: clamp(1.25rem, 4vw, 2rem);
   border: 1px solid var(--color-border);
@@ -8,8 +9,15 @@
   background: var(--color-surface);
 }
 
+.intro {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
 .media {
   min-width: 0;
+  align-self: start;
 }
 
 .previewPlaceholder {
@@ -28,13 +36,11 @@
 
 .image {
   width: 100%;
-  min-height: clamp(16rem, 42vw, 26rem);
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  height: auto;
   border-radius: var(--border-radius);
 }
 
-.content {
+.summary {
   display: flex;
   min-width: 0;
   flex-direction: column;
@@ -42,7 +48,12 @@
 }
 
 .header,
+.context,
 .details,
+.contextBlock,
+.technicalDecisions,
+.learningColumn,
+.keyLearning,
 .detailGroup {
   display: grid;
 }
@@ -51,12 +62,25 @@
   gap: 0.75rem;
 }
 
-.details {
-  gap: 1rem;
+.context {
+  gap: clamp(1rem, 3vw, 1.5rem);
 }
 
+.details {
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: start;
+}
+
+.contextBlock,
+.technicalDecisions,
+.keyLearning,
 .detailGroup {
   gap: 0.45rem;
+}
+
+.learningColumn {
+  align-content: start;
+  gap: 1rem;
 }
 
 .category {
@@ -78,6 +102,7 @@
 }
 
 .description {
+  max-width: 34rem;
   font-size: 1.05rem;
 }
 
@@ -113,6 +138,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  margin-top: 2rem;
 }
 
 .action {
@@ -161,8 +187,17 @@
 }
 
 @media (min-width: 56rem) {
-  .project {
-    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
-    align-items: start;
+  .intro {
+    grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.1fr);
+  }
+
+  .details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .context {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

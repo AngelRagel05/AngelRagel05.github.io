@@ -39,32 +39,37 @@
     "switchToEnglish": "Cambiar idioma a inglés",
     "switchToSpanish": "Cambiar idioma a español"
   },
-  "projects": {
+    "projects": {
     "items": {
       "mikiwi": {
         "category": "Proyecto destacado",
         "title": "MiKiWi",
-        "description": "Aplicación e-commerce Full Stack desarrollada con Laravel, React e Inertia.js, centrada en la personalización de productos, la arquitectura mantenible y el modelado relacional de datos.",
-        "problemTitle": "Problema",
-        "problem": "El proyecto exploraba cómo estructurar una plataforma e-commerce personalizable sin concentrar la lógica de negocio en los controladores ni acoplar en exceso la interfaz con el backend.",
+        "description": "Aplicación e-commerce Full Stack desarrollada con Laravel, React e Inertia.js, centrada en la personalización de productos, una arquitectura mantenible y el modelado relacional de datos.",
+
+        "problemTitle": "Reto",
+        "problem": "El principal reto consistía en estructurar una plataforma e-commerce personalizable sin concentrar la lógica de negocio en los controladores ni acoplar excesivamente la interfaz al backend.",
+
         "solutionTitle": "Solución",
-        "solution": "Diseñé una aplicación modular con Laravel, React e Inertia.js, separando responsabilidades y organizando los conceptos de negocio mediante principios de Domain-Driven Design.",
+        "solution": "Diseñé una aplicación modular con Laravel, React e Inertia.js, separando responsabilidades y organizando la lógica de negocio siguiendo principios de Domain-Driven Design.",
+
         "technicalDecisionsTitle": "Decisiones técnicas",
         "decisions": [
-          "PostgreSQL para el modelado relacional.",
-          "Migraciones, seeders y Eloquent ORM con Laravel.",
-          "React e Inertia.js para la interfaz.",
-          "Git Flow para la gestión de ramas.",
-          "GitHub Actions para integración continua básica.",
-          "Redsys como pasarela de pago seleccionada.",
-          "Supabase como plataforma de base de datos PostgreSQL."
+          "PostgreSQL para el modelado relacional de datos.",
+          "Migraciones, seeders y Eloquent ORM para la gestión de la base de datos.",
+          "React e Inertia.js para la interfaz de usuario.",
+          "Git Flow para una gestión estructurada de las ramas.",
+          "Flujo de integración continua con GitHub Actions.",
+          "Redsys como pasarela de pago.",
+          "Supabase como plataforma gestionada para PostgreSQL."
         ],
+
         "learningTitle": "Aprendizaje clave",
-        "learning": "Este proyecto reforzó mi comprensión de arquitectura de software, modelado relacional, diseño de APIs y separación de la lógica de negocio respecto al framework.",
+        "learning": "Este proyecto reforzó mi comprensión de la arquitectura de software, el modelado relacional, el diseño de APIs y la importancia de mantener la lógica de negocio independiente de los detalles del framework.",
+
         "repository": "Ver repositorio",
         "demo": "Ver demo",
         "preview": "Vista previa del proyecto",
-        "imageAlt": "Vista previa animada del proyecto MiKiWi"
+        "imageAlt": "Vista previa animada de la aplicación e-commerce MiKiWi"
       }
     }
   },

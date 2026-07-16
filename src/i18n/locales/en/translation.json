@@ -18,9 +18,7 @@
   },
   "sections": {
     "projects": {
-      "title": "Selected Projects",
-      "featuredPlaceholder": "Featured Project",
-      "secondaryPlaceholder": "Project"
+      "title": "Selected Projects"
     },
     "about": {
       "title": "About"
@@ -35,22 +33,55 @@
       "title": "Contact"
     }
   },
+  "pages": {
+    "home": {
+      "documentTitle": "Portfolio | Angel Jimenez Ragel"
+    },
+    "projects": {
+      "documentTitle": "Projects | Angel Jimenez Ragel",
+      "title": "All Projects",
+      "introduction": "A complete list of the projects currently available in the portfolio, from the featured full-stack work to supporting desktop and game projects."
+    },
+    "projectDetail": {
+      "documentTitle": "{{project}} | Projects | Angel Jimenez Ragel",
+      "notFoundDocumentTitle": "Project not found | Angel Jimenez Ragel",
+      "backToProjects": "Back to projects",
+      "notFoundTitle": "Project not found",
+      "notFoundDescription": "The project you are looking for is not available in this portfolio.",
+      "detailsLabel": "Project details",
+      "sections": {
+        "overview": "Overview",
+        "challenge": "Challenge",
+        "solution": "Solution",
+        "technicalDecisions": "Technical Decisions",
+        "keyLearning": "Key Learning",
+        "technologies": "Technologies"
+      },
+      "links": {
+        "repository": "View Repository",
+        "demo": "Live Demo"
+      }
+    }
+  },
   "language": {
     "switchToEnglish": "Switch language to English",
     "switchToSpanish": "Switch language to Spanish"
   },
   "projects": {
+    "actions": {
+      "viewAll": "View all projects",
+      "viewProject": "View project"
+    },
+    "previewPlaceholder": "Project preview for {{title}}",
     "items": {
       "mikiwi": {
         "category": "Featured Project",
         "title": "MiKiWi",
+        "shortDescription": "A full-stack e-commerce application built with Laravel, React and Inertia.js.",
         "description": "A full-stack e-commerce application built with Laravel, React and Inertia.js, focused on product customization, maintainable architecture and relational data modelling.",
-        "problemTitle": "Challenge",
-        "problem": "The main challenge was structuring a customizable e-commerce platform without concentrating business logic in controllers or tightly coupling the user interface to the backend.",
-        "solutionTitle": "Solution",
+        "challenge": "The main challenge was structuring a customizable e-commerce platform without concentrating business logic in controllers or tightly coupling the user interface to the backend.",
         "solution": "I designed a modular application with Laravel, React and Inertia.js, separating responsibilities and organizing the core business logic around Domain-Driven Design principles.",
-        "technicalDecisionsTitle": "Technical Decisions",
-        "decisions": [
+        "technicalDecisions": [
           "PostgreSQL for relational data modelling.",
           "Laravel migrations, seeders and Eloquent ORM for database management.",
           "React and Inertia.js for the user interface.",
@@ -59,12 +90,23 @@
           "Redsys as the selected payment gateway.",
           "Supabase as the managed PostgreSQL platform."
         ],
-        "learningTitle": "Key Takeaway",
         "learning": "This project deepened my understanding of software architecture, relational data modelling, API design and the importance of keeping business logic independent from framework-specific concerns.",
-        "repository": "View Repository",
-        "demo": "Live Demo",
-        "preview": "Project preview",
         "imageAlt": "Animated preview of the MiKiWi e-commerce application"
+      },
+      "soundshelf": {
+        "category": "Desktop Application",
+        "title": "SoundShelf",
+        "shortDescription": "A desktop application for organizing and managing a local music library."
+      },
+      "polygonExecution": {
+        "category": "Top-Down Action Game",
+        "title": "Polygon Execution",
+        "shortDescription": "A top-down action game built around enemy waves, shooting and movement mechanics."
+      },
+      "zerohour": {
+        "category": "2D Platform Game",
+        "title": "ZeroHour",
+        "shortDescription": "A 2D platform game focused on fast movement, hazards and level progression."
       }
     }
   },

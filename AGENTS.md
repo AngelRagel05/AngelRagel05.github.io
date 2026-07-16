@@ -75,7 +75,10 @@ export const projects = [
 - Extraer componentes únicamente cuando representen una responsabilidad reutilizable o mejoren claramente la legibilidad o mantenibilidad.
 - No crear componentes genéricos "por si acaso".
 - Evitar prop drilling innecesario, pero no introducir Context u otras soluciones globales sin justificación.
-- No utilizar React Router mientras el portfolio sea una single-page application.
+- Utilizar React Router únicamente para rutas reales del portfolio, como Home, listado de proyectos y detalle de proyectos.
+- No utilizar React Router para navegación interna entre secciones del Home.
+- Los anchors del Home deben seguir funcionando mediante IDs.
+- No introducir navegación compleja ni estado global sin necesidad.
 - No instalar Redux, Zustand ni gestores de estado global sin una necesidad real.
 - No introducir TypeScript salvo petición expresa de migración completa.
 - No mezclar TypeScript y JavaScript de forma aislada.

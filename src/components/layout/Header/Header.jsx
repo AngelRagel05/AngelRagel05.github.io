@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 import logo from '../../../assets/images/FaviconPortfolio.png';
 import { socialLinks } from '../../../data/socialLinks.js';
 import LanguageSwitcher from '../../ui/LanguageSwitcher/LanguageSwitcher.jsx';
@@ -8,16 +9,18 @@ import styles from './Header.module.css';
 const MOBILE_MENU_ID = 'main-navigation';
 
 const navigationItems = [
-  { labelKey: 'navigation.projects', href: '#projects' },
-  { labelKey: 'navigation.about', href: '#about' },
-  { labelKey: 'navigation.experience', href: '#experience' },
-  { labelKey: 'navigation.techStack', href: '#tech-stack' },
-  { labelKey: 'navigation.contact', href: '#contact' },
+  { labelKey: 'navigation.projects', hash: 'projects' },
+  { labelKey: 'navigation.about', hash: 'about' },
+  { labelKey: 'navigation.experience', hash: 'experience' },
+  { labelKey: 'navigation.techStack', hash: 'tech-stack' },
+  { labelKey: 'navigation.contact', hash: 'contact' },
 ];
 
 function Header() {
   const { t } = useTranslation();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -39,10 +42,18 @@ function Header() {
     setIsMenuOpen(false);
   }
 
+  function getHomeAnchorHref(hash) {
+    return isHomePage ? `#${hash}` : `/#${hash}`;
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <a className={styles.brand} href="#hero" onClick={closeMenu}>
+        <a
+          className={styles.brand}
+          href={getHomeAnchorHref('hero')}
+          onClick={closeMenu}
+        >
           <img className={styles.logo} src={logo} alt="" />
           <span className={styles.name}>Ángel Jiménez Ragel</span>
         </a>
@@ -76,8 +87,8 @@ function Header() {
             {navigationItems.map((item) => (
               <a
                 className={styles.link}
-                href={item.href}
-                key={item.href}
+                href={getHomeAnchorHref(item.hash)}
+                key={item.hash}
                 onClick={closeMenu}
               >
                 {t(item.labelKey)}

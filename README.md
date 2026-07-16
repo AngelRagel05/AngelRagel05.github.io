@@ -19,3 +19,23 @@ Los archivos de traducción están en:
 Para añadir una nueva clave, crea la entrada con la misma ruta en ambos archivos JSON y consume el texto desde los componentes con `useTranslation()` y `t('ruta.de.la.clave')`.
 
 Ambos archivos deben mantener siempre la misma estructura de claves.
+
+## Rutas
+
+El portfolio utiliza `react-router-dom` con `BrowserRouter` para mantener URLs limpias:
+
+- `/`
+- `/projects`
+- `/projects/:slug`
+
+La aplicación se despliega en la raíz del dominio de GitHub Pages (`https://angelragel05.github.io/`), por lo que no se configura un `basename` ni una base de Vite específica para una subruta.
+
+Para GitHub Pages se incluye `public/404.html` como fallback estático. Cuando se refresca una ruta interna, GitHub Pages sirve ese archivo y redirige a `/?redirect=...` conservando `pathname`, `search` y `hash`. Antes de montar React, `src/main.jsx` valida ese parámetro interno y restaura la URL limpia con `history.replaceState()`.
+
+Después de añadir `react-router-dom`, ejecuta localmente:
+
+```bash
+npm install
+```
+
+Esto regenerará `package-lock.json` correctamente antes de hacer commit o usar `npm ci`.

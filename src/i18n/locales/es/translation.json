@@ -18,9 +18,7 @@
   },
   "sections": {
     "projects": {
-      "title": "Proyectos seleccionados",
-      "featuredPlaceholder": "Proyecto destacado",
-      "secondaryPlaceholder": "Proyecto"
+      "title": "Proyectos seleccionados"
     },
     "about": {
       "title": "Sobre mí"
@@ -35,25 +33,55 @@
       "title": "Contacto"
     }
   },
+  "pages": {
+    "home": {
+      "documentTitle": "Portfolio | Angel Jimenez Ragel"
+    },
+    "projects": {
+      "documentTitle": "Proyectos | Angel Jimenez Ragel",
+      "title": "Todos los proyectos",
+      "introduction": "Listado completo de los proyectos disponibles actualmente en el portfolio, desde el proyecto full-stack destacado hasta proyectos de escritorio y videojuegos complementarios."
+    },
+    "projectDetail": {
+      "documentTitle": "{{project}} | Proyectos | Angel Jimenez Ragel",
+      "notFoundDocumentTitle": "Proyecto no encontrado | Angel Jimenez Ragel",
+      "backToProjects": "Volver a proyectos",
+      "notFoundTitle": "Proyecto no encontrado",
+      "notFoundDescription": "El proyecto que buscas no está disponible en este portfolio.",
+      "detailsLabel": "Detalles del proyecto",
+      "sections": {
+        "overview": "Resumen",
+        "challenge": "Reto",
+        "solution": "Solución",
+        "technicalDecisions": "Decisiones técnicas",
+        "keyLearning": "Aprendizaje clave",
+        "technologies": "Tecnologías"
+      },
+      "links": {
+        "repository": "Ver repositorio",
+        "demo": "Ver demo"
+      }
+    }
+  },
   "language": {
     "switchToEnglish": "Cambiar idioma a inglés",
     "switchToSpanish": "Cambiar idioma a español"
   },
-    "projects": {
+  "projects": {
+    "actions": {
+      "viewAll": "Ver todos los proyectos",
+      "viewProject": "Ver proyecto"
+    },
+    "previewPlaceholder": "Vista previa del proyecto {{title}}",
     "items": {
       "mikiwi": {
         "category": "Proyecto destacado",
         "title": "MiKiWi",
+        "shortDescription": "Aplicación e-commerce Full Stack desarrollada con Laravel, React e Inertia.js.",
         "description": "Aplicación e-commerce Full Stack desarrollada con Laravel, React e Inertia.js, centrada en la personalización de productos, una arquitectura mantenible y el modelado relacional de datos.",
-
-        "problemTitle": "Reto",
-        "problem": "El principal reto consistía en estructurar una plataforma e-commerce personalizable sin concentrar la lógica de negocio en los controladores ni acoplar excesivamente la interfaz al backend.",
-
-        "solutionTitle": "Solución",
+        "challenge": "El principal reto consistía en estructurar una plataforma e-commerce personalizable sin concentrar la lógica de negocio en los controladores ni acoplar excesivamente la interfaz al backend.",
         "solution": "Diseñé una aplicación modular con Laravel, React e Inertia.js, separando responsabilidades y organizando la lógica de negocio siguiendo principios de Domain-Driven Design.",
-
-        "technicalDecisionsTitle": "Decisiones técnicas",
-        "decisions": [
+        "technicalDecisions": [
           "PostgreSQL para el modelado relacional de datos.",
           "Migraciones, seeders y Eloquent ORM para la gestión de la base de datos.",
           "React e Inertia.js para la interfaz de usuario.",
@@ -62,14 +90,23 @@
           "Redsys como pasarela de pago.",
           "Supabase como plataforma gestionada para PostgreSQL."
         ],
-
-        "learningTitle": "Aprendizaje clave",
         "learning": "Este proyecto reforzó mi comprensión de la arquitectura de software, el modelado relacional, el diseño de APIs y la importancia de mantener la lógica de negocio independiente de los detalles del framework.",
-
-        "repository": "Ver repositorio",
-        "demo": "Ver demo",
-        "preview": "Vista previa del proyecto",
         "imageAlt": "Vista previa animada de la aplicación e-commerce MiKiWi"
+      },
+      "soundshelf": {
+        "category": "Aplicación de escritorio",
+        "title": "SoundShelf",
+        "shortDescription": "Aplicación de escritorio para organizar y gestionar una biblioteca musical local."
+      },
+      "polygonExecution": {
+        "category": "Juego de acción top-down",
+        "title": "Polygon Execution",
+        "shortDescription": "Juego de acción top-down centrado en oleadas de enemigos, disparo y mecánicas de movimiento."
+      },
+      "zerohour": {
+        "category": "Juego de plataformas 2D",
+        "title": "ZeroHour",
+        "shortDescription": "Juego de plataformas 2D centrado en el movimiento rápido, los obstáculos y la progresión del nivel."
       }
     }
   },

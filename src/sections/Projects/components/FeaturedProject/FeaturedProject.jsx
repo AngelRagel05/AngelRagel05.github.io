@@ -3,7 +3,12 @@ import styles from './FeaturedProject.module.css';
 
 function FeaturedProject({ project }) {
   const { t } = useTranslation();
-  const technicalDecisions = t(project.decisionsKey, { returnObjects: true });
+  const title = t(project.titleKey);
+  const detailSections = project.detailSections ?? {};
+  const technicalDecisionsSection = detailSections.technicalDecisions;
+  const technicalDecisions = technicalDecisionsSection?.itemsKey
+    ? t(technicalDecisionsSection.itemsKey, { returnObjects: true })
+    : [];
   const hasImage = Boolean(project.image);
   const hasRepository = Boolean(project.repositoryUrl);
   const hasDemo = Boolean(project.demoUrl);
@@ -18,7 +23,7 @@ function FeaturedProject({ project }) {
           <div className={styles.header}>
             <p className={styles.category}>{t(project.categoryKey)}</p>
             <h3 className={styles.title} id={`${project.id}-title`}>
-              {t(project.titleKey)}
+              {title}
             </h3>
             <p className={styles.description}>{t(project.descriptionKey)}</p>
           </div>
@@ -37,7 +42,7 @@ function FeaturedProject({ project }) {
             <img
               className={styles.image}
               src={project.image}
-              alt={t(project.imageAltKey)}
+              alt={project.imageAltKey ? t(project.imageAltKey) : title}
               loading="lazy"
               decoding="async"
             />
@@ -45,51 +50,63 @@ function FeaturedProject({ project }) {
             <div
               className={styles.previewPlaceholder}
               role="img"
-              aria-label={t(project.previewLabelKey)}
+              aria-label={t(project.previewLabelKey, { title })}
             >
-              <span aria-hidden="true">{t(project.previewLabelKey)}</span>
+              <span aria-hidden="true">{title}</span>
             </div>
           )}
         </div>
       </div>
 
       <div className={styles.context}>
-        <section className={styles.contextBlock}>
-          <h4 className={styles.detailTitle}>
-            {t(project.problemTitleKey)}
-          </h4>
-          <p className={styles.detailText}>{t(project.problemKey)}</p>
-        </section>
+        {detailSections.challenge?.contentKey && (
+          <section className={styles.contextBlock}>
+            <h4 className={styles.detailTitle}>
+              {t(detailSections.challenge.titleKey)}
+            </h4>
+            <p className={styles.detailText}>
+              {t(detailSections.challenge.contentKey)}
+            </p>
+          </section>
+        )}
 
-        <section className={styles.contextBlock}>
-          <h4 className={styles.detailTitle}>
-            {t(project.solutionTitleKey)}
-          </h4>
-          <p className={styles.detailText}>{t(project.solutionKey)}</p>
-        </section>
+        {detailSections.solution?.contentKey && (
+          <section className={styles.contextBlock}>
+            <h4 className={styles.detailTitle}>
+              {t(detailSections.solution.titleKey)}
+            </h4>
+            <p className={styles.detailText}>
+              {t(detailSections.solution.contentKey)}
+            </p>
+          </section>
+        )}
       </div>
 
       <div className={styles.details}>
-        <section className={styles.technicalDecisions}>
-          <h4 className={styles.detailTitle}>
-            {t(project.technicalDecisionsTitleKey)}
-          </h4>
-          {Array.isArray(technicalDecisions) && (
+        {Array.isArray(technicalDecisions) && technicalDecisions.length > 0 && (
+          <section className={styles.technicalDecisions}>
+            <h4 className={styles.detailTitle}>
+              {t(technicalDecisionsSection.titleKey)}
+            </h4>
             <ul className={styles.decisionList}>
               {technicalDecisions.map((decision) => (
                 <li key={decision}>{decision}</li>
               ))}
             </ul>
-          )}
-        </section>
+          </section>
+        )}
 
         <section className={styles.learningColumn}>
-          <div className={styles.keyLearning}>
-            <h4 className={styles.detailTitle}>
-              {t(project.learningTitleKey)}
-            </h4>
-            <p className={styles.detailText}>{t(project.learningKey)}</p>
-          </div>
+          {detailSections.learning?.contentKey && (
+            <div className={styles.keyLearning}>
+              <h4 className={styles.detailTitle}>
+                {t(detailSections.learning.titleKey)}
+              </h4>
+              <p className={styles.detailText}>
+                {t(detailSections.learning.contentKey)}
+              </p>
+            </div>
+          )}
 
           {(hasRepository || hasDemo) && (
             <div className={styles.actions}>
@@ -100,7 +117,7 @@ function FeaturedProject({ project }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {t(project.repositoryLabelKey)}
+                  {t('pages.projectDetail.links.repository')}
                 </a>
               )}
               {hasDemo && (
@@ -110,7 +127,7 @@ function FeaturedProject({ project }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {t(project.demoLabelKey)}
+                  {t('pages.projectDetail.links.demo')}
                 </a>
               )}
             </div>

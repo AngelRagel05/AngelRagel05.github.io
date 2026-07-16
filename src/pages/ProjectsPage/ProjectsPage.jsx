@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { projects } from '../../data/projects.js';
+import { publicProjects } from '../../data/projects.js';
 import ProjectListCard from '../../components/projects/ProjectListCard/ProjectListCard.jsx';
 import styles from './ProjectsPage.module.css';
 
@@ -25,7 +25,7 @@ function ProjectsPage() {
         </div>
 
         <div className={styles.grid}>
-          {projects.map((project) => (
+          {publicProjects.map((project) => (
             <ProjectListCard project={project} key={project.id} />
           ))}
         </div>

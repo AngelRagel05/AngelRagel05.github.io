@@ -9,7 +9,7 @@ function ProjectDetailPage() {
   const { slug } = useParams();
   const { t } = useTranslation();
   const project = getProjectBySlug(slug);
-  const projectTitle = project ? t(project.titleKey) : null;
+  const projectTitle = project ? t(project.i18n.titleKey) : null;
 
   useEffect(() => {
     document.title = project

@@ -1,53 +1,43 @@
 import { useTranslation } from 'react-i18next';
 import styles from './ProjectDetail.module.css';
 
-function TextDetailSection({ section }) {
-  const { t } = useTranslation();
+function DetailSection({ section, t }) {
+  const hasList = Boolean(section.itemsKey);
+  const items = hasList ? t(section.itemsKey, { returnObjects: true }) : [];
 
-  if (!section?.contentKey) {
+  if (!section.contentKey && (!Array.isArray(items) || items.length === 0)) {
     return null;
   }
 
   return (
     <section className={styles.detailSection}>
       <h2 className={styles.detailTitle}>{t(section.titleKey)}</h2>
-      <p className={styles.detailText}>{t(section.contentKey)}</p>
+      {section.contentKey && (
+        <p className={styles.detailText}>{t(section.contentKey)}</p>
+      )}
+      {Array.isArray(items) && items.length > 0 && (
+        <ul className={styles.decisionList}>
+          {items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 }
 
-function TechnicalDecisionsSection({ section }) {
-  const { t } = useTranslation();
+function getActionClassName(link) {
+  const variantClassName =
+    link.variant === 'primary' ? styles.primaryAction : styles.secondaryAction;
 
-  if (!section?.itemsKey) {
-    return null;
-  }
-
-  const decisions = t(section.itemsKey, { returnObjects: true });
-
-  if (!Array.isArray(decisions) || decisions.length === 0) {
-    return null;
-  }
-
-  return (
-    <section className={styles.detailSection}>
-      <h2 className={styles.detailTitle}>{t(section.titleKey)}</h2>
-      <ul className={styles.decisionList}>
-        {decisions.map((decision) => (
-          <li key={decision}>{decision}</li>
-        ))}
-      </ul>
-    </section>
-  );
+  return `${styles.action} ${variantClassName}`;
 }
 
 function ProjectDetail({ project }) {
   const { t } = useTranslation();
-  const title = t(project.titleKey);
-  const hasImage = Boolean(project.image);
-  const hasRepository = Boolean(project.repositoryUrl);
-  const hasDemo = Boolean(project.demoUrl);
-  const detailSections = project.detailSections ?? {};
+  const title = t(project.i18n.titleKey);
+  const image = project.media.mainImage;
+  const links = project.links.filter((link) => link.url);
 
   return (
     <article
@@ -56,66 +46,60 @@ function ProjectDetail({ project }) {
     >
       <div className={styles.hero}>
         <div className={styles.summary}>
-          <p className={styles.category}>{t(project.categoryKey)}</p>
+          <p className={styles.category}>{t(project.category.labelKey)}</p>
           <h1 className={styles.title} id={`${project.id}-detail-title`}>
             {title}
           </h1>
-          <p className={styles.description}>{t(project.descriptionKey)}</p>
+          <p className={styles.description}>{t(project.i18n.overviewKey)}</p>
         </div>
 
-        {hasImage && (
+        {image && (
           <img
             className={styles.image}
-            src={project.image}
-            alt={project.imageAltKey ? t(project.imageAltKey) : title}
+            src={image.src}
+            alt={image.altKey ? t(image.altKey) : title}
             loading="lazy"
             decoding="async"
           />
         )}
       </div>
 
-      <section className={styles.technologiesSection}>
-        <h2 className={styles.detailTitle}>
-          {t('pages.projectDetail.sections.technologies')}
-        </h2>
-        <ul className={styles.technologies}>
-          {project.technologies.map((technology) => (
-            <li className={styles.technology} key={technology}>
-              {technology}
-            </li>
+      {project.technologies.length > 0 && (
+        <section className={styles.technologiesSection}>
+          <h2 className={styles.detailTitle}>
+            {t('pages.projectDetail.sections.technologies')}
+          </h2>
+          <ul className={styles.technologies}>
+            {project.technologies.map((technology) => (
+              <li className={styles.technology} key={technology.id}>
+                {technology.name}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {project.detailSections.length > 0 && (
+        <div className={styles.sections}>
+          {project.detailSections.map((section) => (
+            <DetailSection section={section} key={section.id} t={t} />
           ))}
-        </ul>
-      </section>
+        </div>
+      )}
 
-      <div className={styles.sections}>
-        <TextDetailSection section={detailSections.challenge} />
-        <TextDetailSection section={detailSections.solution} />
-        <TechnicalDecisionsSection section={detailSections.technicalDecisions} />
-        <TextDetailSection section={detailSections.learning} />
-      </div>
-
-      {(hasRepository || hasDemo) && (
+      {links.length > 0 && (
         <div className={styles.actions}>
-          {hasRepository && (
+          {links.map((link) => (
             <a
-              className={`${styles.action} ${styles.primaryAction}`}
-              href={project.repositoryUrl}
-              target="_blank"
-              rel="noreferrer"
+              className={getActionClassName(link)}
+              href={link.url}
+              key={link.id}
+              rel={link.external ? 'noreferrer' : undefined}
+              target={link.external ? '_blank' : undefined}
             >
-              {t('pages.projectDetail.links.repository')}
+              {t(link.labelKey)}
             </a>
-          )}
-          {hasDemo && (
-            <a
-              className={`${styles.action} ${styles.secondaryAction}`}
-              href={project.demoUrl}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t('pages.projectDetail.links.demo')}
-            </a>
-          )}
+          ))}
         </div>
       )}
     </article>

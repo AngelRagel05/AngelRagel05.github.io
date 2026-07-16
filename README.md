@@ -20,6 +20,12 @@ Para añadir una nueva clave, crea la entrada con la misma ruta en ambos archivo
 
 Ambos archivos deben mantener siempre la misma estructura de claves.
 
+## Organización de proyectos
+
+`src/data/projects.js` es la fuente única de información estructural de los proyectos. Para añadir un proyecto nuevo, añade un objeto al array `projects` y crea las claves de traducción correspondientes.
+
+Cada proyecto define su orden, visibilidad, categoría, recursos visuales, tecnologías como objetos reutilizables, enlaces externos y secciones de detalle opcionales. Los componentes sólo renderizan los datos disponibles: si un proyecto no tiene imagen, enlaces, galería o secciones de detalle, esos bloques no se muestran.
+
 ## Rutas
 
 El portfolio utiliza `react-router-dom` con `BrowserRouter` para mantener URLs limpias:

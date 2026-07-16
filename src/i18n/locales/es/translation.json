@@ -59,7 +59,9 @@
       },
       "links": {
         "repository": "Ver repositorio",
-        "demo": "Ver demo"
+        "demo": "Ver demo",
+        "gameplayVideo": "Vídeo de gameplay",
+        "downloadBuild": "Descargar build"
       }
     }
   },
@@ -96,17 +98,64 @@
       "soundshelf": {
         "category": "Aplicación de escritorio",
         "title": "SoundShelf",
-        "shortDescription": "Aplicación de escritorio para organizar y gestionar una biblioteca musical local."
+        "shortDescription": "Aplicación de escritorio para organizar y gestionar una biblioteca musical local de gran tamaño, con edición de metadatos, comparación con playlists de YouTube y flujos de descarga integrados.",
+        "overview": "SoundShelf es una aplicación de escritorio desarrollada en Python para organizar y gestionar una biblioteca musical local de unas 3.000 canciones. Integra organización de archivos, edición de metadatos, comparación con playlists, flujos de descarga y persistencia local dentro de una estructura por capas pensada para mantener el proyecto comprensible y mantenible.",
+        "challenge": "El reto principal fue coordinar varias responsabilidades sin mezclar la interfaz, la persistencia y la lógica de aplicación. La herramienta debía trabajar con archivos de audio locales, mantener alineados los registros de la base de datos y los metadatos, integrar herramientas externas y seguir siendo manejable con una biblioteca de tamaño considerable.",
+        "solution": "Organicé la aplicación mediante una arquitectura por capas inspirada en DDD y casos de uso, separando reglas de dominio, flujos de aplicación, detalles de infraestructura y capa de presentación. Los repositorios aíslan la persistencia, los casos de uso coordinan las operaciones y las integraciones de metadatos, descargas y conversión de audio quedan fuera de la interfaz.",
+        "technicalDecisions": [
+          "SQLite para la persistencia local.",
+          "SQLAlchemy para el modelado de datos y el acceso a base de datos.",
+          "Alembic para gestionar migraciones de base de datos.",
+          "Mutagen para leer y editar metadatos de audio.",
+          "yt-dlp para los flujos de descarga.",
+          "ffmpeg para conversión de audio y tratamiento de archivos.",
+          "Pillow para gestionar imágenes y carátulas.",
+          "CustomTkinter para la interfaz de escritorio.",
+          "Estructura por capas separando casos de uso, repositorios e interfaz.",
+          "GitHub Actions para comprobaciones de integración continua."
+        ],
+        "learning": "Este proyecto me permitió practicar el diseño de una aplicación de escritorio con responsabilidades claras, persistencia local y manejo de archivos. También reforzó mi comprensión sobre cómo integrar librerías externas manteniendo los flujos principales más fáciles de mantener."
       },
       "polygonExecution": {
         "category": "Juego de acción top-down",
         "title": "Polygon Execution",
-        "shortDescription": "Juego de acción top-down centrado en oleadas de enemigos, disparo y mecánicas de movimiento."
+        "shortDescription": "Juego de acción top-down desarrollado en Unity, con progresión por oleadas, IA de enemigos, sistemas modulares de combate y audio adaptativo.",
+        "overview": "Polygon Execution es un juego de acción top-down desarrollado en Unity alrededor de combate rápido y coordinación en tiempo real entre sistemas de juego. El proyecto combina un bucle de combate con oleadas de enemigos, persecución y ataques mediante IA, dash, salud, respuesta visual en la UI, audio adaptativo, menús y progresión de dificultad.",
+        "challenge": "El reto principal fue coordinar varios sistemas que dependen del estado actual de la partida. La progresión de oleadas, el comportamiento de enemigos, el daño, la invulnerabilidad, los cooldowns, el audio y la UI debían mantenerse sincronizados sin acoplar en exceso jugabilidad, menús y gestores.",
+        "solution": "Dividí el proyecto en sistemas con responsabilidades diferenciadas. WaveManager gestiona la progresión de oleadas, EnemyAI controla comportamiento y estadísticas configurables, PlayerHealth se encarga del daño y la invulnerabilidad, movimiento y disparo quedan aislados, SoundManager mantiene música y efectos entre escenas, y los managers de UI y menús coordinan presentación y navegación con comunicación controlada entre sistemas.",
+        "technicalDecisions": [
+          "WaveManager para centralizar la progresión de oleadas y el recuento de enemigos.",
+          "EnemyAI con estadísticas configurables para cada tipo de enemigo.",
+          "Frames de invulnerabilidad tras recibir daño.",
+          "Invulnerabilidad durante el dash con cooldown visible en la UI.",
+          "Rigidbody y físicas para la gestión de proyectiles.",
+          "Destrucción automática de proyectiles tras un tiempo fijo.",
+          "SoundManager persistente para música y efectos entre escenas.",
+          "Separación entre responsabilidades de gameplay, UI, audio y menús.",
+          "URP y post-processing para la presentación visual.",
+          "Reinicio de escena tras la muerte del jugador."
+        ],
+        "learning": "Este proyecto me permitió practicar la coordinación de sistemas en tiempo real manteniendo responsabilidades separadas. Reforzó la importancia de gestionar el estado con cuidado, conectar jugabilidad y UI de forma deliberada y limitar el acoplamiento entre gestores cuando interactúan mecánicas como cooldowns, oleadas e invulnerabilidad."
       },
       "zerohour": {
         "category": "Juego de plataformas 2D",
         "title": "ZeroHour",
-        "shortDescription": "Juego de plataformas 2D centrado en el movimiento rápido, los obstáculos y la progresión del nivel."
+        "shortDescription": "Juego de plataformas 2D desarrollado en Unity, con movimiento preciso, ranking persistente, audio configurable y un flujo completo de partida.",
+        "overview": "ZeroHour es un juego de plataformas 2D desarrollado en Unity como una experiencia jugable completa, desde el menú principal hasta la partida, el HUD, la pantalla de victoria y el ranking persistente. El proyecto combina sistemas de movimiento preciso, llaves coleccionables, obstáculos, gestión de audio y persistencia local para mantener un flujo coherente desde el inicio de la partida hasta el registro de un resultado Top 5.",
+        "challenge": "El reto principal fue coordinar jugabilidad, UI, audio y persistencia manteniendo un movimiento con buena respuesta y un flujo de escenas comprensible. El proyecto necesitaba conectar menús, estado de partida, pausa, condición de victoria y datos locales sin generar un acoplamiento excesivo entre sistemas.",
+        "solution": "Dividí el proyecto en sistemas con responsabilidades claras: gestión central del estado de la partida, control independiente del audio, gestión de la UI, persistencia local mediante PlayerPrefs, movimiento del personaje aislado y navegación entre escenas. Esta separación permitió mantener la lógica de juego apartada de la presentación, haciendo que el bucle de juego, el ranking y la configuración de audio trabajasen juntos.",
+        "technicalDecisions": [
+          "2D Physics para movimiento lateral y colisiones.",
+          "Coyote time, jump buffer y jump cut para mejorar la sensación de movimiento.",
+          "PlayerPrefs para persistir el ranking Top 5 y la configuración de audio.",
+          "Tilemap para la colocación de coleccionables.",
+          "Responsabilidades separadas para estado de partida, HUD y sistemas de audio.",
+          "Escenas independientes para menú, partida y victoria.",
+          "Ranking Top 5 guardado localmente.",
+          "Música gestionada según escena y estado de juego.",
+          "Persistencia local para ajustes visibles para el jugador."
+        ],
+        "learning": "Este proyecto me ayudó a comprender cómo jugabilidad, UI, audio y persistencia deben coordinarse dentro de una experiencia interactiva. También reforzó la importancia de separar sistemas y cuidar el game feel manteniendo un flujo completo fácil de mantener."
       }
     }
   },

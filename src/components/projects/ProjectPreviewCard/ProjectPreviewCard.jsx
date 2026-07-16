@@ -4,47 +4,41 @@ import styles from './ProjectPreviewCard.module.css';
 
 function ProjectPreviewCard({ project }) {
   const { t } = useTranslation();
-  const title = t(project.titleKey);
-  const hasImage = Boolean(project.image);
+  const title = t(project.i18n.titleKey);
+  const image = project.media.mainImage;
 
   return (
     <article
       className={styles.card}
       aria-labelledby={`${project.id}-preview-title`}
     >
-      <div className={styles.media}>
-        {hasImage ? (
+      {image && (
+        <div className={styles.media}>
           <img
             className={styles.image}
-            src={project.image}
-            alt={project.imageAltKey ? t(project.imageAltKey) : title}
+            src={image.src}
+            alt={image.altKey ? t(image.altKey) : title}
             loading="lazy"
             decoding="async"
           />
-        ) : (
-          <div
-            className={styles.placeholder}
-            role="img"
-            aria-label={t(project.previewLabelKey, { title })}
-          >
-            <span aria-hidden="true">{title}</span>
-          </div>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className={styles.body}>
         <div className={styles.header}>
-          <p className={styles.category}>{t(project.categoryKey)}</p>
+          <p className={styles.category}>{t(project.category.labelKey)}</p>
           <h3 className={styles.title} id={`${project.id}-preview-title`}>
             {title}
           </h3>
-          <p className={styles.description}>{t(project.shortDescriptionKey)}</p>
+          <p className={styles.description}>
+            {t(project.i18n.shortDescriptionKey)}
+          </p>
         </div>
 
         <ul className={styles.technologies}>
           {project.technologies.map((technology) => (
-            <li className={styles.technology} key={technology}>
-              {technology}
+            <li className={styles.technology} key={technology.id}>
+              {technology.name}
             </li>
           ))}
         </ul>

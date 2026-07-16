@@ -59,7 +59,9 @@
       },
       "links": {
         "repository": "View Repository",
-        "demo": "Live Demo"
+        "demo": "Live Demo",
+        "gameplayVideo": "Gameplay Video",
+        "downloadBuild": "Download Build"
       }
     }
   },
@@ -96,17 +98,64 @@
       "soundshelf": {
         "category": "Desktop Application",
         "title": "SoundShelf",
-        "shortDescription": "A desktop application for organizing and managing a local music library."
+        "shortDescription": "A desktop application for organizing and managing a large local music library, with metadata editing, YouTube playlist comparison and integrated download workflows.",
+        "overview": "SoundShelf is a Python desktop application for organizing and managing a local music library of around 3,000 songs. It brings together local file organization, metadata editing, playlist comparison, download workflows and local persistence in a layered structure designed to keep the application understandable and maintainable.",
+        "challenge": "The main challenge was coordinating several responsibilities without mixing interface code, persistence and business logic. The application needed to work with local audio files, keep database records and file metadata aligned, integrate external tools and remain manageable while handling a music library of a considerable size.",
+        "solution": "I organized the application with a layered architecture inspired by DDD and use cases, separating domain rules, application workflows, infrastructure details and the presentation layer. Repositories isolate persistence concerns, use cases coordinate operations, and integrations such as metadata editing, downloads and audio conversion are kept outside the user interface.",
+        "technicalDecisions": [
+          "SQLite for local persistence.",
+          "SQLAlchemy for data modelling and database access.",
+          "Alembic for managing database migrations.",
+          "Mutagen for reading and editing audio metadata.",
+          "yt-dlp for download workflows.",
+          "ffmpeg for audio conversion and file processing.",
+          "Pillow for image and cover handling.",
+          "CustomTkinter for the desktop interface.",
+          "A layered structure separating use cases, repositories and interface code.",
+          "GitHub Actions for continuous integration checks."
+        ],
+        "learning": "This project helped me practise designing a desktop application with clear responsibilities, local persistence and file handling. It also strengthened my understanding of how to integrate external libraries while keeping the core workflows easier to maintain."
       },
       "polygonExecution": {
         "category": "Top-Down Action Game",
         "title": "Polygon Execution",
-        "shortDescription": "A top-down action game built around enemy waves, shooting and movement mechanics."
+        "shortDescription": "A top-down action game built with Unity, featuring wave-based progression, enemy AI, modular combat systems and adaptive audio.",
+        "overview": "Polygon Execution is a top-down action game built with Unity around fast combat and real-time coordination between gameplay systems. The project combines a combat loop with enemy waves, AI-driven pursuit and attacks, dash mechanics, health, UI feedback, adaptive audio, menus and difficulty progression.",
+        "challenge": "The main challenge was coordinating multiple systems that depend on the current game state. Wave progression, enemy behaviour, damage, invulnerability, cooldowns, audio and UI needed to stay synchronized without letting gameplay, menus and managers become too tightly coupled.",
+        "solution": "I divided the project into systems with differentiated responsibilities. WaveManager handles wave progression, EnemyAI manages enemy behaviour and configurable stats, PlayerHealth controls damage and invulnerability, movement and shooting are isolated, SoundManager persists music and effects between scenes, and UI and menu managers coordinate presentation and navigation with controlled communication between systems.",
+        "technicalDecisions": [
+          "WaveManager to centralize wave progression and enemy counts.",
+          "EnemyAI with configurable stats for each enemy type.",
+          "Invulnerability frames after player damage.",
+          "Dash invulnerability with a visible UI cooldown.",
+          "Rigidbody and physics-based handling for projectiles.",
+          "Automatic projectile destruction after a fixed lifetime.",
+          "Persistent SoundManager for music and sound effects between scenes.",
+          "Separation between gameplay, UI, audio and menu responsibilities.",
+          "URP and post-processing for the visual presentation.",
+          "Scene restart after player death."
+        ],
+        "learning": "This project helped me practise coordinating real-time systems while keeping responsibilities separated. It reinforced the importance of managing state carefully, connecting gameplay and UI deliberately, and limiting coupling between managers as mechanics such as cooldowns, waves and invulnerability interact."
       },
       "zerohour": {
         "category": "2D Platform Game",
         "title": "ZeroHour",
-        "shortDescription": "A 2D platform game focused on fast movement, hazards and level progression."
+        "shortDescription": "A 2D platform game built with Unity, featuring responsive movement, persistent rankings, configurable audio and a complete gameplay loop.",
+        "overview": "ZeroHour is a 2D platform game built with Unity as a complete playable experience, from the main menu to gameplay, HUD, victory screen and persistent ranking. The project combines responsive movement systems, collectible keys, hazards, audio management and local persistence to support a coherent flow from starting a run to recording a Top 5 result.",
+        "challenge": "The main challenge was coordinating gameplay, UI, audio and persistence while keeping the movement responsive and the scene flow understandable. The project needed to connect menus, gameplay state, pause behaviour, victory conditions and local data without creating excessive coupling between systems.",
+        "solution": "I divided the project into systems with clear responsibilities: central game state management, independent audio control, UI handling, local persistence through PlayerPrefs, isolated character movement and scene navigation. This kept gameplay logic separated from presentation concerns while allowing the game loop, ranking and audio settings to work together.",
+        "technicalDecisions": [
+          "2D Physics for lateral movement and collisions.",
+          "Coyote time, jump buffer and jump cut to improve movement feel.",
+          "PlayerPrefs for persistent Top 5 rankings and audio settings.",
+          "Tilemap for collectible placement.",
+          "Separate responsibilities for game state, HUD and audio systems.",
+          "Independent scenes for menu, gameplay and victory flow.",
+          "Top 5 ranking stored locally.",
+          "Music handled by scene and game state.",
+          "Local persistence for player-facing settings."
+        ],
+        "learning": "This project helped me understand how gameplay, UI, audio and persistence need to work together in an interactive experience. It also reinforced the value of separating systems and paying attention to game feel while keeping the full flow maintainable."
       }
     }
   },

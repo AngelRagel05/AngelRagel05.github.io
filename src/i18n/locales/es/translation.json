@@ -111,7 +111,15 @@
       ]
     },
     "contact": {
-      "title": "Contacto"
+      "title": "Contacto",
+      "subtitle": "¿Te interesa mi perfil o quieres hablar sobre una oportunidad? Estaré encantado de conocerte.",
+      "note": "Actualmente busco mi primera oportunidad como desarrollador Full Stack. Si crees que puedo aportar valor a tu equipo, estaré encantado de hablar contigo.",
+      "links": {
+        "email": "Enviar correo",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "cv": "Descargar CV"
+      }
     }
   },
   "pages": {

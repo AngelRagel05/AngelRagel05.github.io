@@ -111,7 +111,15 @@
       ]
     },
     "contact": {
-      "title": "Contact"
+      "title": "Let's Connect",
+      "subtitle": "Interested in my profile or would like to discuss an opportunity? I'd be happy to hear from you.",
+      "note": "I am currently looking for my first opportunity as a Full Stack Developer. If you think I could contribute to your team, I'd be happy to talk.",
+      "links": {
+        "email": "Email Me",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
+        "cv": "Download CV"
+      }
     }
   },
   "pages": {

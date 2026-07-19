@@ -20,10 +20,42 @@
       "title": "Selected Projects"
     },
     "about": {
-      "title": "About"
+      "title": "About Me",
+      "paragraphs": [
+        "I am a Full Stack Developer with a Higher Vocational Degree in Web Application Development, mainly focused on <strong>Laravel, React and Inertia.js</strong>. I enjoy building applications that are not only functional, but also understandable, maintainable and easy to evolve.",
+        "Before writing code, I try to understand the problem, its requirements and the implications behind each decision. I am particularly interested in <strong>backend development, database design, REST APIs, software architecture and refactoring</strong>, applying principles such as SOLID, DRY, KISS and YAGNI when they provide real value.",
+        "I have contributed to both professional and personal projects, developing complete features, integrating external services and collaborating directly with stakeholders. I am currently looking to join a team where I can continue growing, learn from more experienced developers and contribute through an organised, responsible and quality-focused approach."
+      ]
     },
     "experience": {
-      "title": "Experience"
+      "title": "Experience",
+      "items": [
+        {
+          "company": "Everlasting Art",
+          "role": "Full Stack Developer",
+          "date": "February 2026 – June 2026",
+          "location": "Seville · On-site",
+          "responsibilities": [
+            "Developed Full Stack features using <strong>Laravel, React and Inertia.js</strong>.",
+            "Analysed business requirements and collaborated directly with stakeholders to define technically viable solutions.",
+            "Developed and maintained <strong>REST APIs</strong>, applying validation, business logic and security improvements.",
+            "Integrated external services such as <strong>Mailgun</strong>.",
+            "Resolved issues and contributed to the application's continuous improvement and maintenance following a <strong>Kanban</strong> workflow."
+          ]
+        },
+        {
+          "company": "Pango Studio",
+          "role": "Web Developer",
+          "date": "April 2025 – June 2025",
+          "location": "Remote",
+          "responsibilities": [
+            "Developed backend features using <strong>Laravel</strong>.",
+            "Tested and validated <strong>REST APIs</strong> using <strong>Postman</strong>.",
+            "Imported, transformed and validated data from <strong>CSV files</strong>.",
+            "Gained experience working within an existing application and adapting to its technical structure."
+          ]
+        }
+      ]
     },
     "techStack": {
       "title": "Tech Stack"

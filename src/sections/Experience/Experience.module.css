@@ -5,6 +5,70 @@
   padding: var(--section-spacing) clamp(1rem, 4vw, 2rem);
 }
 
+.content {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 56rem;
+}
+
 .title {
   color: var(--color-text);
+}
+
+.list {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2rem);
+}
+
+.item {
+  display: grid;
+  gap: 1rem;
+  padding-top: clamp(1.25rem, 3vw, 1.5rem);
+  border-top: 1px solid var(--color-border);
+}
+
+.header {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.headingGroup {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.company {
+  color: var(--color-text);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  line-height: 1.15;
+}
+
+.role {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+}
+
+.metaItem {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.responsibilities {
+  display: grid;
+  gap: 0.55rem;
+  padding-left: 1.2rem;
+  color: var(--color-text-secondary);
+  list-style: disc;
+}
+
+.responsibilities strong {
+  color: var(--color-text);
+  font-weight: 700;
 }

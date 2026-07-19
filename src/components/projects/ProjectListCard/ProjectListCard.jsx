@@ -5,11 +5,11 @@ import styles from './ProjectListCard.module.css';
 function ProjectListCard({ project }) {
   const { t } = useTranslation();
   const title = t(project.i18n.titleKey);
-  const image = project.media.mainImage;
+  const image = project.media.thumbnail;
 
   return (
     <article
-      className={styles.card}
+      className={`${styles.card} ${image ? styles.withMedia : ''}`}
       aria-labelledby={`${project.id}-list-title`}
     >
       {image && (
@@ -17,7 +17,9 @@ function ProjectListCard({ project }) {
           <img
             className={styles.image}
             src={image.src}
-            alt={image.altKey ? t(image.altKey) : title}
+            alt={image.altKey ? t(image.altKey) : ''}
+            width={image.width}
+            height={image.height}
             loading="lazy"
             decoding="async"
           />

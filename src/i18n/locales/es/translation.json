@@ -1,6 +1,5 @@
 {
   "navigation": {
-    "brand": "Portfolio",
     "home": "Inicio",
     "projects": "Proyectos",
     "about": "Sobre mí",
@@ -48,7 +47,6 @@
       "backToProjects": "Volver a proyectos",
       "notFoundTitle": "Proyecto no encontrado",
       "notFoundDescription": "El proyecto que buscas no está disponible en este portfolio.",
-      "detailsLabel": "Detalles del proyecto",
       "sections": {
         "overview": "Resumen",
         "challenge": "Reto",
@@ -74,7 +72,6 @@
       "viewAll": "Ver todos los proyectos",
       "viewProject": "Ver proyecto"
     },
-    "previewPlaceholder": "Vista previa del proyecto {{title}}",
     "items": {
       "mikiwi": {
         "category": "Proyecto destacado",
@@ -93,7 +90,8 @@
           "Supabase como plataforma gestionada para PostgreSQL."
         ],
         "learning": "Este proyecto reforzó mi comprensión de la arquitectura de software, el modelado relacional, el diseño de APIs y la importancia de mantener la lógica de negocio independiente de los detalles del framework.",
-        "imageAlt": "Vista previa animada de la aplicación e-commerce MiKiWi"
+        "imageAlt": "Vista previa animada de la aplicación e-commerce MiKiWi",
+        "thumbnailAlt": "Página de inicio del e-commerce MiKiWi mostrando secciones de productos y colecciones"
       },
       "soundshelf": {
         "category": "Aplicación de escritorio",

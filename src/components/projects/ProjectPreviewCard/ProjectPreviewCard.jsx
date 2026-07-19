@@ -2,10 +2,16 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styles from './ProjectPreviewCard.module.css';
 
+const MAX_VISIBLE_TECHNOLOGIES = 5;
+
 function ProjectPreviewCard({ project }) {
   const { t } = useTranslation();
   const title = t(project.i18n.titleKey);
-  const image = project.media.mainImage;
+  const image = project.media.thumbnail;
+  const visibleTechnologies = project.technologies.slice(
+    0,
+    MAX_VISIBLE_TECHNOLOGIES,
+  );
 
   return (
     <article
@@ -17,7 +23,9 @@ function ProjectPreviewCard({ project }) {
           <img
             className={styles.image}
             src={image.src}
-            alt={image.altKey ? t(image.altKey) : title}
+            alt={image.altKey ? t(image.altKey) : ''}
+            width={image.width}
+            height={image.height}
             loading="lazy"
             decoding="async"
           />
@@ -36,7 +44,7 @@ function ProjectPreviewCard({ project }) {
         </div>
 
         <ul className={styles.technologies}>
-          {project.technologies.map((technology) => (
+          {visibleTechnologies.map((technology) => (
             <li className={styles.technology} key={technology.id}>
               {technology.name}
             </li>

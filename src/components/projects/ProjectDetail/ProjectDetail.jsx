@@ -44,7 +44,7 @@ function ProjectDetail({ project }) {
       className={styles.detail}
       aria-labelledby={`${project.id}-detail-title`}
     >
-      <div className={styles.hero}>
+      <div className={`${styles.hero} ${image ? styles.withMedia : ''}`}>
         <div className={styles.summary}>
           <p className={styles.category}>{t(project.category.labelKey)}</p>
           <h1 className={styles.title} id={`${project.id}-detail-title`}>
@@ -57,7 +57,9 @@ function ProjectDetail({ project }) {
           <img
             className={styles.image}
             src={image.src}
-            alt={image.altKey ? t(image.altKey) : title}
+            alt={image.altKey ? t(image.altKey) : ''}
+            width={image.width}
+            height={image.height}
             loading="lazy"
             decoding="async"
           />

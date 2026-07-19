@@ -1,6 +1,5 @@
 {
   "navigation": {
-    "brand": "Portfolio",
     "home": "Home",
     "projects": "Projects",
     "about": "About",
@@ -48,7 +47,6 @@
       "backToProjects": "Back to projects",
       "notFoundTitle": "Project not found",
       "notFoundDescription": "The project you are looking for is not available in this portfolio.",
-      "detailsLabel": "Project details",
       "sections": {
         "overview": "Overview",
         "challenge": "Challenge",
@@ -74,7 +72,6 @@
       "viewAll": "View all projects",
       "viewProject": "View project"
     },
-    "previewPlaceholder": "Project preview for {{title}}",
     "items": {
       "mikiwi": {
         "category": "Featured Project",
@@ -93,7 +90,8 @@
           "Supabase as the managed PostgreSQL platform."
         ],
         "learning": "This project deepened my understanding of software architecture, relational data modelling, API design and the importance of keeping business logic independent from framework-specific concerns.",
-        "imageAlt": "Animated preview of the MiKiWi e-commerce application"
+        "imageAlt": "Animated preview of the MiKiWi e-commerce application",
+        "thumbnailAlt": "MiKiWi e-commerce homepage showing product sections and collections"
       },
       "soundshelf": {
         "category": "Desktop Application",

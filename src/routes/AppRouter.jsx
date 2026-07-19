@@ -27,10 +27,26 @@ function ScrollToTop() {
   return null;
 }
 
+function RouteMetadata() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const routeUrl = new URL(pathname, window.location.origin).toString();
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    const openGraphUrl = document.querySelector('meta[property="og:url"]');
+
+    canonicalLink?.setAttribute('href', routeUrl);
+    openGraphUrl?.setAttribute('content', routeUrl);
+  }, [pathname]);
+
+  return null;
+}
+
 function AppRouter() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <RouteMetadata />
       <Header />
 
       <Routes>

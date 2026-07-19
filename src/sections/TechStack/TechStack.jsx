@@ -5,7 +5,7 @@ function TechStack() {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.section} id="tech-stack">
+    <section className={styles.section} id="skills">
       <h2 className={styles.title}>{t('sections.techStack.title')}</h2>
     </section>
   );

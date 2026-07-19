@@ -57,7 +57,7 @@ function FeaturedProject({ project }) {
       className={styles.project}
       aria-labelledby={`${project.id}-title`}
     >
-      <div className={styles.intro}>
+      <div className={`${styles.intro} ${image ? styles.withMedia : ''}`}>
         <div className={styles.summary}>
           <div className={styles.header}>
             <p className={styles.category}>{t(project.category.labelKey)}</p>
@@ -81,7 +81,9 @@ function FeaturedProject({ project }) {
             <img
               className={styles.image}
               src={image.src}
-              alt={image.altKey ? t(image.altKey) : title}
+              alt={image.altKey ? t(image.altKey) : ''}
+              width={image.width}
+              height={image.height}
               loading="lazy"
               decoding="async"
             />

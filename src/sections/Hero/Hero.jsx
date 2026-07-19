@@ -6,7 +6,7 @@ function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className={styles.section} id="hero">
+    <section className={styles.section} id="home">
       <div className={styles.content}>
         <p className={styles.eyebrow}>{t('hero.eyebrow')}</p>
         <h1 className={styles.title}>{t('hero.title')}</h1>

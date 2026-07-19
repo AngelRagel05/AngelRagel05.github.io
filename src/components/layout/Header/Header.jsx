@@ -12,7 +12,7 @@ const navigationItems = [
   { labelKey: 'navigation.projects', hash: 'projects' },
   { labelKey: 'navigation.about', hash: 'about' },
   { labelKey: 'navigation.experience', hash: 'experience' },
-  { labelKey: 'navigation.techStack', hash: 'tech-stack' },
+  { labelKey: 'navigation.techStack', hash: 'skills' },
   { labelKey: 'navigation.contact', hash: 'contact' },
 ];
 
@@ -51,7 +51,8 @@ function Header() {
       <div className={styles.container}>
         <a
           className={styles.brand}
-          href={getHomeAnchorHref('hero')}
+          href={getHomeAnchorHref('home')}
+          aria-label={t('navigation.home')}
           onClick={closeMenu}
         >
           <img className={styles.logo} src={logo} alt="" />

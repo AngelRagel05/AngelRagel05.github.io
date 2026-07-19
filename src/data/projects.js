@@ -1,4 +1,5 @@
 import mikiwiDemo from '../assets/gif/DemoMikiwi.gif';
+import mikiwiThumbnail from '../assets/images/projects/mikiwi/DemoMikiwi.webp';
 
 const projectStatus = {
   published: 'published',
@@ -29,6 +30,10 @@ export const projects = [
         src: mikiwiDemo,
         altKey: 'projects.items.mikiwi.imageAlt',
         type: 'gif',
+      },
+      thumbnail: {
+        src: mikiwiThumbnail,
+        altKey: 'projects.items.mikiwi.thumbnailAlt',
       },
       gallery: [],
       video: null,
@@ -103,6 +108,7 @@ export const projects = [
     },
     media: {
       mainImage: null,
+      thumbnail: null,
       gallery: [],
       video: null,
     },
@@ -169,6 +175,7 @@ export const projects = [
     },
     media: {
       mainImage: null,
+      thumbnail: null,
       gallery: [],
       video: null,
     },
@@ -238,6 +245,7 @@ export const projects = [
     },
     media: {
       mainImage: null,
+      thumbnail: null,
       gallery: [],
       video: null,
     },

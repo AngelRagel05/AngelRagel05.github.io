@@ -9,28 +9,17 @@
 
 .media {
   min-width: 0;
-}
-
-.image,
-.placeholder {
-  width: 100%;
+  overflow: hidden;
   aspect-ratio: 16 / 9;
   border-radius: calc(var(--border-radius) - 4px);
 }
 
 .image {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-}
-
-.placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed var(--color-border);
-  background: var(--color-background);
-  color: var(--color-text-muted);
-  font-weight: 700;
-  text-align: center;
+  border-radius: inherit;
 }
 
 .content,
@@ -104,7 +93,7 @@
 }
 
 @media (min-width: 48rem) {
-  .card {
+  .withMedia {
     grid-template-columns: minmax(14rem, 0.45fr) minmax(0, 1fr);
   }
 }

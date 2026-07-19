@@ -18,26 +18,14 @@
 .media {
   min-width: 0;
   align-self: start;
-}
-
-.previewPlaceholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: clamp(16rem, 42vw, 26rem);
-  aspect-ratio: 16 / 10;
-  border: 1px dashed var(--color-border);
   border-radius: var(--border-radius);
-  background: var(--color-background);
-  color: var(--color-text-muted);
-  font-weight: 700;
 }
 
 .image {
+  display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--border-radius);
+  border-radius: inherit;
 }
 
 .summary {
@@ -187,7 +175,7 @@
 }
 
 @media (min-width: 56rem) {
-  .intro {
+  .withMedia {
     grid-template-columns: minmax(18rem, 0.9fr) minmax(0, 1.1fr);
   }
 

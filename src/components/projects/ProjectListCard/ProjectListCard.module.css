@@ -2,9 +2,8 @@
   display: grid;
   gap: clamp(1rem, 3vw, 1.5rem);
   padding: clamp(1rem, 3vw, 1.5rem);
-  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 78%, transparent);
 }
 
 .media {

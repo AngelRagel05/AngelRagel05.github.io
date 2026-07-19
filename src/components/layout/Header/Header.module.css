@@ -9,6 +9,7 @@
 }
 
 .container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,75 +70,139 @@
 
 .menuButton:hover,
 .menuButton:focus-visible {
-  border-color: var(--color-primary);
   background: var(--color-surface);
 }
 
-.menuIcon,
-.menuIcon::before,
-.menuIcon::after {
-  display: block;
-  width: 1rem;
-  height: 2px;
-  border-radius: var(--border-radius);
-  background: currentColor;
-}
-
 .menuIcon {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.25rem;
+  height: 0.9rem;
 }
 
-.menuIcon::before,
-.menuIcon::after {
-  position: absolute;
-  left: 0;
-  content: '';
+.menuIconLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background-color: currentColor;
+  opacity: 1;
+  transform: translateY(0) rotate(0);
+  transform-origin: center;
+  transition:
+    transform 200ms ease,
+    opacity 150ms ease;
 }
 
-.menuIcon::before {
-  top: -0.35rem;
+.menuButtonOpen .menuIconLine:nth-child(1) {
+  transform: translateY(0.4rem) rotate(45deg);
 }
 
-.menuIcon::after {
-  top: 0.35rem;
+.menuButtonOpen .menuIconLine:nth-child(2) {
+  opacity: 0;
+}
+
+.menuButtonOpen .menuIconLine:nth-child(3) {
+  transform: translateY(-0.4rem) rotate(-45deg);
 }
 
 .menu {
   position: absolute;
   top: 100%;
-  right: clamp(1rem, 4vw, 2rem);
-  left: clamp(1rem, 4vw, 2rem);
-  display: none;
-  padding: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
+  right: 0;
+  left: 0;
+  z-index: 10;
+  --menu-arrow-right: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.menuArrow {
+  position: absolute;
+  top: -0.45rem;
+  right: var(--menu-arrow-right);
+  width: 0.9rem;
+  height: 0.9rem;
   background: var(--color-surface);
+  opacity: 0;
+  pointer-events: none;
+  transform: rotate(45deg) scale(0);
+  transform-origin: center;
+}
+
+.menuMounted {
+  opacity: 1;
+  visibility: visible;
 }
 
 .menuOpen {
+  pointer-events: auto;
+}
+
+.menuSurface {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-surface);
+  border-radius: 0;
+  clip-path: inset(0 0 0 0 round 0);
+  opacity: 0;
+  pointer-events: none;
+  transform: none;
+  transform-origin: top right;
+}
+
+.menuOpen .menuSurface {
+  opacity: 1;
+}
+
+.menuContent {
+  position: relative;
+  z-index: 1;
   display: grid;
-  gap: 1rem;
+  gap: 0.35rem;
+  padding: 0.6rem;
+  opacity: 0;
+}
+
+.menuOpen .menuContent {
+  opacity: 1;
 }
 
 .navigation {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.25rem;
 }
 
 .link {
+  padding: 0.7rem 0.75rem;
+  border-radius: calc(var(--border-radius) - 4px);
   color: var(--color-text-muted);
   font-size: 0.95rem;
   font-weight: 500;
-  transition: color var(--transition-default);
+  white-space: nowrap;
+  transition:
+    background var(--transition-default),
+    color var(--transition-default);
 }
 
 .link:hover,
 .link:focus-visible {
+  background: var(--color-background);
   color: var(--color-primary);
 }
 
 .desktopLanguage {
   display: none;
+}
+
+.menuDivider {
+  width: 100%;
+  height: 1px;
+  margin: 0.35rem 0;
+  background: var(--color-border);
 }
 
 .cvLink {
@@ -165,7 +230,13 @@
   color: var(--color-background);
 }
 
-@media (min-width: 880px) {
+@media (max-width: 1099px) {
+  .menu:not(.menuMounted) {
+    display: none;
+  }
+}
+
+@media (min-width: 1100px) {
   .name {
     display: inline;
   }
@@ -176,14 +247,40 @@
 
   .menu {
     position: static;
+    display: block;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+    visibility: visible;
+  }
+
+  .menuArrow {
+    display: none;
+  }
+
+  .menuSurface {
+    position: static;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .menuContent {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
     padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
+    opacity: 1;
   }
 
   .navigation {
@@ -192,12 +289,32 @@
     gap: 1.25rem;
   }
 
+  .link {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .link:hover,
+  .link:focus-visible {
+    background: transparent;
+  }
+
   .desktopLanguage {
     display: block;
+  }
+
+  .menuDivider {
+    display: none;
   }
 
   .cvLink {
     width: auto;
     white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menuIconLine {
+    transition: none;
   }
 }

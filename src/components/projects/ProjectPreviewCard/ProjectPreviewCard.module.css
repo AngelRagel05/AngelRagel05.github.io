@@ -4,9 +4,8 @@
   gap: 1rem;
   height: 100%;
   padding: clamp(1rem, 3vw, 1.25rem);
-  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface) 78%, transparent);
 }
 
 .media {

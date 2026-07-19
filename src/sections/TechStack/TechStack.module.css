@@ -5,6 +5,79 @@
   padding: var(--section-spacing) clamp(1rem, 4vw, 2rem);
 }
 
+.content {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 60rem;
+}
+
+.header {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 44rem;
+}
+
 .title {
   color: var(--color-text);
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+}
+
+.categories {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.category {
+  display: grid;
+  gap: 0.85rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.categoryTitle {
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-background);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.coreCategory .badge {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.additionalCategory .badge {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (min-width: 48rem) {
+  .categories {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .coreCategory {
+    grid-column: 1 / -1;
+  }
 }

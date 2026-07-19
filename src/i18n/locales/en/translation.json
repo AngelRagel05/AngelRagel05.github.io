@@ -58,7 +58,57 @@
       ]
     },
     "techStack": {
-      "title": "Tech Stack"
+      "title": "Technical Skills",
+      "subtitle": "Technologies and tools I work with on a regular basis.",
+      "categories": [
+        {
+          "title": "Core Stack",
+          "items": [
+            "Laravel",
+            "React",
+            "Inertia.js",
+            "PHP",
+            "PostgreSQL",
+            "MySQL"
+          ]
+        },
+        {
+          "title": "Backend & APIs",
+          "items": [
+            "REST APIs",
+            "Eloquent ORM",
+            "MVC",
+            "Authentication",
+            "Validation"
+          ]
+        },
+        {
+          "title": "Tools & Best Practices",
+          "items": [
+            "Git",
+            "GitHub",
+            "Git Flow",
+            "GitHub Actions",
+            "Postman",
+            "Composer",
+            "npm",
+            "Vite",
+            "SOLID",
+            "DRY",
+            "KISS",
+            "YAGNI",
+            "Clean Code"
+          ]
+        },
+        {
+          "title": "Additional Knowledge",
+          "items": [
+            "Python",
+            "Java",
+            "SQLite"
+          ]
+        }
+      ]
     },
     "contact": {
       "title": "Contact"

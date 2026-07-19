@@ -404,6 +404,20 @@ function Header() {
     }
 
     const animationRequestId = menuAnimationRequestIdRef.current;
+    const scheduleMenuUnmount = () => {
+      const animationFrameId = window.requestAnimationFrame(() => {
+        if (
+          menuAnimationRequestIdRef.current !== animationRequestId ||
+          isMenuOpenRef.current
+        ) {
+          return;
+        }
+
+        setIsMenuMounted(false);
+      });
+
+      return () => window.cancelAnimationFrame(animationFrameId);
+    };
     const hasActiveAnimations = activeMenuAnimationsRef.current.length > 0;
     const currentPanelFrame = hasActiveAnimations
       ? getCurrentPanelFrame(panelElement)
@@ -426,11 +440,7 @@ function Header() {
     );
 
     if (isDesktopMenuLayout(menuShellElement) || prefersReducedMotion()) {
-      if (!isMenuOpen) {
-        setIsMenuMounted(false);
-      }
-
-      return undefined;
+      return isMenuOpen ? undefined : scheduleMenuUnmount();
     }
 
     const menuAnimationGeometry = getMenuAnimationGeometry(
@@ -440,11 +450,7 @@ function Header() {
     );
 
     if (!menuAnimationGeometry) {
-      if (!isMenuOpen) {
-        setIsMenuMounted(false);
-      }
-
-      return undefined;
+      return isMenuOpen ? undefined : scheduleMenuUnmount();
     }
 
     menuShellElement.style.setProperty(

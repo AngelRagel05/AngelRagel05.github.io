@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import Reveal from '../../../../components/ui/Reveal/Reveal.jsx';
 import styles from './FeaturedProject.module.css';
 
 function FeaturedDetailSection({
@@ -58,7 +59,7 @@ function FeaturedProject({ project }) {
       aria-labelledby={`${project.id}-title`}
     >
       <div className={`${styles.intro} ${image ? styles.withMedia : ''}`}>
-        <div className={styles.summary}>
+        <Reveal className={styles.summary} direction="left">
           <div className={styles.header}>
             <p className={styles.category}>{t(project.category.labelKey)}</p>
             <h3 className={styles.title} id={`${project.id}-title`}>
@@ -74,10 +75,10 @@ function FeaturedProject({ project }) {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
         {image && (
-          <div className={styles.media}>
+          <Reveal className={styles.media} direction="right">
             <img
               className={styles.image}
               src={image.src}
@@ -87,7 +88,7 @@ function FeaturedProject({ project }) {
               loading="lazy"
               decoding="async"
             />
-          </div>
+          </Reveal>
         )}
       </div>
 

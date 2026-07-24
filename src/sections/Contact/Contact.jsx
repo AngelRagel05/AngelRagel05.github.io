@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { socialLinks } from '../../data/socialLinks.js';
+import Reveal from '../../components/ui/Reveal/Reveal.jsx';
 import styles from './Contact.module.css';
 
 const contactLinks = [
@@ -59,7 +60,7 @@ function Contact() {
       id="contact"
       aria-labelledby="contact-title"
     >
-      <div className={styles.content}>
+      <Reveal className={styles.content} direction="up">
         <div className={styles.header}>
           <h2 className={styles.title} id="contact-title">
             {t('sections.contact.title')}
@@ -81,7 +82,7 @@ function Contact() {
         </div>
 
         <p className={styles.note}>{t('sections.contact.note')}</p>
-      </div>
+      </Reveal>
     </section>
   );
 }

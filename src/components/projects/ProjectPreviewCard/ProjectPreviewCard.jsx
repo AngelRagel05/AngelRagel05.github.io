@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Reveal from '../../ui/Reveal/Reveal.jsx';
 import styles from './ProjectPreviewCard.module.css';
 
 const MAX_VISIBLE_TECHNOLOGIES = 5;
 
-function ProjectPreviewCard({ project }) {
+function ProjectPreviewCard({ animationDelay = 0, project }) {
   const { t } = useTranslation();
   const title = t(project.i18n.titleKey);
   const image = project.media.thumbnail;
@@ -14,8 +15,11 @@ function ProjectPreviewCard({ project }) {
   );
 
   return (
-    <article
+    <Reveal
+      as="article"
       className={styles.card}
+      delay={animationDelay}
+      direction="up"
       aria-labelledby={`${project.id}-preview-title`}
     >
       {image && (
@@ -55,7 +59,7 @@ function ProjectPreviewCard({ project }) {
           {t('projects.actions.viewProject')}
         </Link>
       </div>
-    </article>
+    </Reveal>
   );
 }
 

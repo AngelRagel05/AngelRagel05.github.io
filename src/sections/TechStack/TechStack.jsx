@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import Reveal from '../../components/ui/Reveal/Reveal.jsx';
 import styles from './TechStack.module.css';
 
 function TechStack() {
@@ -34,7 +35,12 @@ function TechStack() {
               .join(' ');
 
             return (
-              <section className={categoryClassName} key={category.title}>
+              <Reveal
+                as="section"
+                className={categoryClassName}
+                direction="up"
+                key={category.title}
+              >
                 <h3 className={styles.categoryTitle}>{category.title}</h3>
                 <ul className={styles.badges}>
                   {category.items.map((item) => (
@@ -43,7 +49,7 @@ function TechStack() {
                     </li>
                   ))}
                 </ul>
-              </section>
+              </Reveal>
             );
           })}
         </div>

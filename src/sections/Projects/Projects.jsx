@@ -8,6 +8,8 @@ import ProjectPreviewCard from '../../components/projects/ProjectPreviewCard/Pro
 import FeaturedProject from './components/FeaturedProject/FeaturedProject.jsx';
 import styles from './Projects.module.css';
 
+const PROJECT_CARD_STAGGER_MS = 80;
+
 function Projects() {
   const { t } = useTranslation();
 
@@ -29,8 +31,12 @@ function Projects() {
         )}
 
         <div className={styles.secondaryProjectsGrid}>
-          {homePreviewProjects.map((project) => (
-            <ProjectPreviewCard project={project} key={project.id} />
+          {homePreviewProjects.map((project, index) => (
+            <ProjectPreviewCard
+              animationDelay={index * PROJECT_CARD_STAGGER_MS}
+              project={project}
+              key={project.id}
+            />
           ))}
         </div>
 

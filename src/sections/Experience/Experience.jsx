@@ -1,4 +1,5 @@
 import { Trans, useTranslation } from 'react-i18next';
+import Reveal from '../../components/ui/Reveal/Reveal.jsx';
 import styles from './Experience.module.css';
 
 function Experience() {
@@ -18,7 +19,12 @@ function Experience() {
 
         <div className={styles.list}>
           {experiences.map((experience, experienceIndex) => (
-            <article className={styles.item} key={experience.company}>
+            <Reveal
+              as="article"
+              className={styles.item}
+              direction="left"
+              key={experience.company}
+            >
               <header className={styles.header}>
                 <div className={styles.headingGroup}>
                   <h3 className={styles.company}>{experience.company}</h3>
@@ -46,7 +52,7 @@ function Experience() {
                   ),
                 )}
               </ul>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

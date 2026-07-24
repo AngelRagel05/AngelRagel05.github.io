@@ -1,4 +1,5 @@
 import { Trans, useTranslation } from 'react-i18next';
+import Reveal from '../../components/ui/Reveal/Reveal.jsx';
 import styles from './About.module.css';
 
 function About() {
@@ -11,7 +12,7 @@ function About() {
       id="about"
       aria-labelledby="about-title"
     >
-      <div className={styles.content}>
+      <Reveal className={styles.content} direction="up">
         <h2 className={styles.title} id="about-title">
           {t('sections.about.title')}
         </h2>
@@ -26,7 +27,7 @@ function About() {
             </p>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

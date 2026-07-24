@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { socialLinks } from '../../data/socialLinks.js';
+import Reveal from '../../components/ui/Reveal/Reveal.jsx';
 import styles from './Hero.module.css';
 
 function Hero() {
@@ -7,7 +8,7 @@ function Hero() {
 
   return (
     <section className={styles.section} id="home">
-      <div className={styles.content}>
+      <Reveal className={styles.content} direction="up">
         <p className={styles.eyebrow}>{t('hero.eyebrow')}</p>
         <h1 className={styles.title}>{t('hero.title')}</h1>
         <p className={styles.description}>{t('hero.description')}</p>
@@ -19,7 +20,7 @@ function Hero() {
             {t('hero.downloadCv')}
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
